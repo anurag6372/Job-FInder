@@ -39,22 +39,22 @@ public class Controller {
 	}
 	
 	@PostMapping("/registerRecruiter")
-	public String registerRecruiter(@RequestBody Recruiter recruiter) {
+	public Recruiter registerRecruiter(@RequestBody Recruiter recruiter) throws Exception {
 		return Rservice.register(recruiter);
 	}
-	
-	@PostMapping("/registerJobSeeker")
-	public String registerJobSeeker(@RequestBody JobSeeker jobSeeker) {
-		return JSservice.register();
-	}
-	
+
 	@PostMapping("/loginRecruiter")
-	public Recruiter loginRecruiter(@RequestBody Recruiter recruiter) {
+	public Recruiter loginRecruiter(@RequestBody Recruiter recruiter) throws Exception {
 		return Rservice.loginRecruiter(recruiter);
 	}
-	
+
+	@PostMapping("/registerJobSeeker")
+	public JobSeeker registerJobSeeker(@RequestBody JobSeeker jobSeeker) throws Exception {
+		return JSservice.register(jobSeeker);
+	}
+
 	@PostMapping("/loginJobSeeker")
-	public JobSeeker loginJobSeeker(@RequestBody JobSeeker jobSeeker) {
+	public JobSeeker loginJobSeeker(@RequestBody JobSeeker jobSeeker) throws Exception {
 		return JSservice.loginJobSeeker(jobSeeker);
 	}
 	

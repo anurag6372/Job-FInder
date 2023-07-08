@@ -10,4 +10,6 @@ import com.example.demo.entity.JobSeeker;
 @Repository
 public interface JobSeekerRepository extends JpaRepository<JobSeeker, UUID>{
 
+    JobSeeker findByEmail(String email);
+
 }
