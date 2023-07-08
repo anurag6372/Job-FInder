@@ -4,12 +4,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
 import lombok.Data;
+
 
 import java.util.UUID;
 
 @Entity(name="JobSeeker")
 @Data
+
+
 public class JobSeeker {
 
     @Id
@@ -20,6 +24,10 @@ public class JobSeeker {
     private String password;
     private String skils;
     private String portfolioLink;
+
+
+    public JobSeeker() {
+    }
 
     public JobSeeker(UUID id, String name, String email, String password, String skils, String portfolioLink) {
         this.id = id;

@@ -1,14 +1,13 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import lombok.Data;
 
-import java.util.Date;
 
+import java.util.Date;
 import java.util.UUID;
+
 
 @Entity(name="Job")
 @Data
@@ -29,8 +28,14 @@ public class Job {
     private String experience;
     private Date dateOfPosting;
 
-    public Job(UUID id, String title, String companyName, String tags, String description,
-               String location, String salary, String skillsRequired, String applyLink, Date lastApplyDate, String experience, Date dateOfPosting) {
+    @ManyToOne
+    private Recruiter recruiter;
+
+    public Job() {
+    }
+
+    public Job(UUID id, String title, String companyName, String tags, String description, String location, String salary,
+               String skillsRequired, String applyLink, Date lastApplyDate, String experience, Date dateOfPosting, Recruiter recruiter) {
         this.id = id;
         this.title = title;
         this.companyName = companyName;
@@ -43,6 +48,7 @@ public class Job {
         this.lastApplyDate = lastApplyDate;
         this.experience = experience;
         this.dateOfPosting = dateOfPosting;
+        this.recruiter = recruiter;
     }
 
     public UUID getId() {
@@ -141,6 +147,14 @@ public class Job {
         this.dateOfPosting = dateOfPosting;
     }
 
+    public Recruiter getRecruiter() {
+        return recruiter;
+    }
+
+    public void setRecruiter(Recruiter recruiter) {
+        this.recruiter = recruiter;
+    }
+
     @Override
     public String toString() {
         return "Job{" +
@@ -156,6 +170,7 @@ public class Job {
                 ", lastApplyDate=" + lastApplyDate +
                 ", experience='" + experience + '\'' +
                 ", dateOfPosting=" + dateOfPosting +
+                ", recruiter=" + recruiter +
                 '}';
     }
 }

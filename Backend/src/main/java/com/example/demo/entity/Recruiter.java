@@ -1,13 +1,12 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import lombok.Data;
 
-import java.util.List;
+import java.util.*;
 import java.util.UUID;
+
 
 @Entity(name="Recruiter")
 @Data
@@ -20,16 +19,21 @@ public class Recruiter {
     private String password;
     private String position;
     private String companyName;
-    private List<Job> jobs;
 
-    public Recruiter(UUID id, String name, String email, String password, String position, String companyName, List<Job> jobs) {
+    @OneToMany(mappedBy="recruiter")
+    private List<Job> jobList;
+
+    public Recruiter() {
+    }
+
+    public Recruiter(UUID id, String name, String email, String password, String position, String companyName, List<Job> jobList) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.position = position;
         this.companyName = companyName;
-        this.jobs = jobs;
+        this.jobList = jobList;
     }
 
     public UUID getId() {
@@ -80,12 +84,12 @@ public class Recruiter {
         this.companyName = companyName;
     }
 
-    public List<Job> getJobs() {
-        return jobs;
+    public List<Job> getJobList() {
+        return jobList;
     }
 
-    public void setJobs(List<Job> jobs) {
-        this.jobs = jobs;
+    public void setJobList(List<Job> jobList) {
+        this.jobList = jobList;
     }
 
     @Override
@@ -97,8 +101,7 @@ public class Recruiter {
                 ", password='" + password + '\'' +
                 ", position='" + position + '\'' +
                 ", companyName='" + companyName + '\'' +
-                ", jobs=" + jobs +
+                ", jobList=" + jobList +
                 '}';
     }
-
 }
