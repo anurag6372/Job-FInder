@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -56,6 +57,17 @@ public class Controller {
 	public JobSeeker loginJobSeeker(@RequestBody JobSeeker jobSeeker) {
 		return JSservice.loginJobSeeker(jobSeeker);
 	}
+	
+	@GetMapping("{JSid}/getJob/{jobId}")
+	public Job getJob(@PathVariable("jobId") UUID id,@PathVariable("JSid") UUID jsId) {
+		return Jservice.getJob(jsId,id);
+	}
+	
+	@PostMapping("/addJob/{Rid}")
+	public Job addJob(@PathVariable("Rid") UUID id,@RequestBody Job job) {
+		return Rservice.addJob(id,job);
+	}
+	
 	
 	
 	
