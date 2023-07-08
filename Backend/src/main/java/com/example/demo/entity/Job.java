@@ -6,6 +6,7 @@ import lombok.Data;
 
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -18,14 +19,14 @@ public class Job {
     private UUID id;
     private String title;
     private String companyName;
-    private String tags;
+    private List<String> tags;
     private String description;
     private String location;
-    private String salary;
-    private String skillsRequired;
+    private Double salary;
+    private List<String> skillsRequired;
     private String applyLink;
     private Date lastApplyDate;
-    private String experience;
+    private int experience;
     private Date dateOfPosting;
 
     @ManyToOne
@@ -34,8 +35,8 @@ public class Job {
     public Job() {
     }
 
-    public Job(UUID id, String title, String companyName, String tags, String description, String location, String salary,
-               String skillsRequired, String applyLink, Date lastApplyDate, String experience, Date dateOfPosting, Recruiter recruiter) {
+    public Job(UUID id, String title, String companyName, List<String> tags, String description, String location, Double salary,
+               List<String> skillsRequired, String applyLink, Date lastApplyDate, int experience, Date dateOfPosting, Recruiter recruiter) {
         this.id = id;
         this.title = title;
         this.companyName = companyName;
@@ -75,11 +76,11 @@ public class Job {
         this.companyName = companyName;
     }
 
-    public String getTags() {
+    public List<String> getTags() {
         return tags;
     }
 
-    public void setTags(String tags) {
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
 
@@ -99,19 +100,19 @@ public class Job {
         this.location = location;
     }
 
-    public String getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(String salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
-    public String getSkillsRequired() {
+    public List<String> getSkillsRequired() {
         return skillsRequired;
     }
 
-    public void setSkillsRequired(String skillsRequired) {
+    public void setSkillsRequired(List<String> skillsRequired) {
         this.skillsRequired = skillsRequired;
     }
 
@@ -131,11 +132,11 @@ public class Job {
         this.lastApplyDate = lastApplyDate;
     }
 
-    public String getExperience() {
+    public int getExperience() {
         return experience;
     }
 
-    public void setExperience(String experience) {
+    public void setExperience(int experience) {
         this.experience = experience;
     }
 

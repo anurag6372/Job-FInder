@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 
 import lombok.Data;
 
-
+import java.util.List;
 import java.util.UUID;
 
 @Entity(name="JobSeeker")
@@ -22,19 +22,19 @@ public class JobSeeker {
     private String name;
     private String email;
     private String password;
-    private String skils;
+    private List<String> skills;
     private String portfolioLink;
 
 
     public JobSeeker() {
     }
 
-    public JobSeeker(UUID id, String name, String email, String password, String skils, String portfolioLink) {
+    public JobSeeker(UUID id, String name, String email, String password, List<String> skills, String portfolioLink) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
-        this.skils = skils;
+        this.skills = skills;
         this.portfolioLink = portfolioLink;
     }
 
@@ -70,12 +70,12 @@ public class JobSeeker {
         this.password = password;
     }
 
-    public String getSkils() {
-        return skils;
+    public List<String> getSkils() {
+        return skills;
     }
 
-    public void setSkils(String skils) {
-        this.skils = skils;
+    public void setSkils(List<String> skills) {
+        this.skills = skills;
     }
 
     public String getPortfolioLink() {
@@ -93,7 +93,7 @@ public class JobSeeker {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", skils='" + skils + '\'' +
+                ", skills='" + skills + '\'' +
                 ", portfolioLink='" + portfolioLink + '\'' +
                 '}';
     }
