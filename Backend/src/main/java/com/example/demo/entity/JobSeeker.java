@@ -1,9 +1,6 @@
 package com.example.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import lombok.Data;
 
@@ -25,17 +22,21 @@ public class JobSeeker {
     private List<String> skills;
     private String portfolioLink;
 
+    @OneToMany(mappedBy="jobseeker")
+    private List<Job> jobList;
+
 
     public JobSeeker() {
     }
 
-    public JobSeeker(UUID id, String name, String email, String password, List<String> skills, String portfolioLink) {
+    public JobSeeker(UUID id, String name, String email, String password, List<String> skills, String portfolioLink, List<Job> jobList) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.skills = skills;
         this.portfolioLink = portfolioLink;
+        this.jobList = jobList;
     }
 
     public UUID getId() {
@@ -70,11 +71,11 @@ public class JobSeeker {
         this.password = password;
     }
 
-    public List<String> getSkils() {
+    public List<String> getSkills() {
         return skills;
     }
 
-    public void setSkils(List<String> skills) {
+    public void setSkills(List<String> skills) {
         this.skills = skills;
     }
 
@@ -86,6 +87,14 @@ public class JobSeeker {
         this.portfolioLink = portfolioLink;
     }
 
+    public List<Job> getJobList() {
+        return jobList;
+    }
+
+    public void setJobList(List<Job> jobList) {
+        this.jobList = jobList;
+    }
+
     @Override
     public String toString() {
         return "JobSeeker{" +
@@ -93,8 +102,9 @@ public class JobSeeker {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", skills='" + skills + '\'' +
+                ", skills=" + skills +
                 ", portfolioLink='" + portfolioLink + '\'' +
+                ", jobList=" + jobList +
                 '}';
     }
 }

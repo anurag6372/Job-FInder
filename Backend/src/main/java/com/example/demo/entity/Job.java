@@ -32,11 +32,14 @@ public class Job {
     @ManyToOne
     private Recruiter recruiter;
 
+    @ManyToOne
+    private JobSeeker jobseeker;
+
     public Job() {
     }
 
-    public Job(UUID id, String title, String companyName, List<String> tags, String description, String location, Double salary,
-               List<String> skillsRequired, String applyLink, Date lastApplyDate, int experience, Date dateOfPosting, Recruiter recruiter) {
+    public Job(UUID id, String title, String companyName, List<String> tags, String description, String location, Double salary, List<String> skillsRequired,
+               String applyLink, Date lastApplyDate, int experience, Date dateOfPosting, Recruiter recruiter, JobSeeker jobseeker) {
         this.id = id;
         this.title = title;
         this.companyName = companyName;
@@ -50,6 +53,7 @@ public class Job {
         this.experience = experience;
         this.dateOfPosting = dateOfPosting;
         this.recruiter = recruiter;
+        this.jobseeker = jobseeker;
     }
 
     public UUID getId() {
@@ -156,22 +160,31 @@ public class Job {
         this.recruiter = recruiter;
     }
 
+    public JobSeeker getJobseeker() {
+        return jobseeker;
+    }
+
+    public void setJobseeker(JobSeeker jobseeker) {
+        this.jobseeker = jobseeker;
+    }
+
     @Override
     public String toString() {
         return "Job{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", companyName='" + companyName + '\'' +
-                ", tags='" + tags + '\'' +
+                ", tags=" + tags +
                 ", description='" + description + '\'' +
                 ", location='" + location + '\'' +
-                ", salary='" + salary + '\'' +
-                ", skillsRequired='" + skillsRequired + '\'' +
+                ", salary=" + salary +
+                ", skillsRequired=" + skillsRequired +
                 ", applyLink='" + applyLink + '\'' +
                 ", lastApplyDate=" + lastApplyDate +
-                ", experience='" + experience + '\'' +
+                ", experience=" + experience +
                 ", dateOfPosting=" + dateOfPosting +
                 ", recruiter=" + recruiter +
+                ", jobseeker=" + jobseeker +
                 '}';
     }
 }
