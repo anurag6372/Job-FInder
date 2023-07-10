@@ -13,6 +13,10 @@ public class JobService {
 
 	@Autowired
 	JobRepository repo;
+	
+	@Autowired
+	RecruiterService Rservice;
+	
 	public List<Job> allJobs() {
 
 		return repo.findAll();
@@ -27,5 +31,13 @@ public class JobService {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void addJob(UUID id, Job job) {
+		// TODO Auto-generated method stub
+		Job tempObj = repo.save(job);
+		Rservice.findRecruiter(id).getJobList().add(tempObj);
+	}
+
+	
 
 }

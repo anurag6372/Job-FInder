@@ -58,14 +58,14 @@ public class Controller {
 		return JSservice.loginJobSeeker(jobSeeker);
 	}
 	
-	@GetMapping("{JSid}/getJob/{jobId}")
+	@GetMapping("{JSid}/applyForJob/{jobId}")
 	public Job getJob(@PathVariable("jobId") UUID id,@PathVariable("JSid") UUID jsId) {
 		return Jservice.getJob(jsId,id);
 	}
 	
 	@PostMapping("/addJob/{Rid}")
-	public Job addJob(@PathVariable("Rid") UUID id,@RequestBody Job job) {
-		return Rservice.addJob(id,job);
+	public void addJob(@PathVariable("Rid") UUID id,@RequestBody Job job) {
+		Jservice.addJob(id,job);
 	}
 	
 	

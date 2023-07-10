@@ -36,9 +36,11 @@ public class RecruiterService {
 		return tempObj;
 	}
 
-	public Job addJob(UUID id, Job job) {
-		// TODO Auto-generated method stub
-		return null;
+	public Recruiter findRecruiter(UUID id) {
+		return repo.findById(id).orElse(null);
+		
 	}
+
+	
 
 }
