@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -24,9 +25,15 @@ public class JobSeeker {
     private String password;
     private List<String> skills;
     private String portfolioLink;
+<<<<<<< Updated upstream
 // @JsonIgnoreProperties({"jobseeker"})
     @OneToMany(mappedBy="jobseeker")
     private List<Job> jobList;
+=======
+
+    @ManyToMany
+    private List<Job> jobList ;
+>>>>>>> Stashed changes
 
 
     public JobSeeker() {
