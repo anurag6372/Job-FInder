@@ -9,9 +9,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 @Entity(name="Job")
 @Data
+@Embeddable
 public class Job {
 
     @Id
@@ -28,6 +31,7 @@ public class Job {
     private Date lastApplyDate;
     private int experience;
     private Date dateOfPosting;
+
 
     @ManyToOne
     private Recruiter recruiter;
@@ -151,7 +155,8 @@ public class Job {
     public void setDateOfPosting(Date dateOfPosting) {
         this.dateOfPosting = dateOfPosting;
     }
-
+    
+   
     public Recruiter getRecruiter() {
         return recruiter;
     }
@@ -160,6 +165,7 @@ public class Job {
         this.recruiter = recruiter;
     }
 
+   
     public JobSeeker getJobseeker() {
         return jobseeker;
     }
@@ -168,23 +174,14 @@ public class Job {
         this.jobseeker = jobseeker;
     }
 
-    @Override
-    public String toString() {
-        return "Job{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", companyName='" + companyName + '\'' +
-                ", tags=" + tags +
-                ", description='" + description + '\'' +
-                ", location='" + location + '\'' +
-                ", salary=" + salary +
-                ", skillsRequired=" + skillsRequired +
-                ", applyLink='" + applyLink + '\'' +
-                ", lastApplyDate=" + lastApplyDate +
-                ", experience=" + experience +
-                ", dateOfPosting=" + dateOfPosting +
-                ", recruiter=" + recruiter +
-                ", jobseeker=" + jobseeker +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Job [id=" + id + ", title=" + title + ", companyName=" + companyName + ", tags=" + tags
+				+ ", description=" + description + ", location=" + location + ", salary=" + salary + ", skillsRequired="
+				+ skillsRequired + ", applyLink=" + applyLink + ", lastApplyDate=" + lastApplyDate + ", experience="
+				+ experience + ", dateOfPosting=" + dateOfPosting + ", recruiter=" + recruiter + ", jobseeker="
+				+ jobseeker + "]";
+	}
+
+    
 }

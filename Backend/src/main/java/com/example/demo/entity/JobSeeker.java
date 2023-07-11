@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -7,10 +8,12 @@ import lombok.Data;
 import java.util.List;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity(name="JobSeeker")
 @Data
 
-
+@Embeddable
 public class JobSeeker {
 
     @Id
@@ -21,7 +24,7 @@ public class JobSeeker {
     private String password;
     private List<String> skills;
     private String portfolioLink;
-
+// @JsonIgnoreProperties({"jobseeker"})
     @OneToMany(mappedBy="jobseeker")
     private List<Job> jobList;
 
@@ -87,6 +90,7 @@ public class JobSeeker {
         this.portfolioLink = portfolioLink;
     }
 
+//    @JsonManagedReference
     public List<Job> getJobList() {
         return jobList;
     }
@@ -95,16 +99,11 @@ public class JobSeeker {
         this.jobList = jobList;
     }
 
-    @Override
-    public String toString() {
-        return "JobSeeker{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", skills=" + skills +
-                ", portfolioLink='" + portfolioLink + '\'' +
-                ", jobList=" + jobList +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "JobSeeker [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", skills="
+				+ skills + ", portfolioLink=" + portfolioLink + ", jobList=" + jobList + "]";
+	}
+
+    
 }

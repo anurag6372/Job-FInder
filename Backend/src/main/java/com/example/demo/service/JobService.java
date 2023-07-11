@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,11 +33,28 @@ public class JobService {
 		return null;
 	}
 
-	public void addJob(UUID id, Job job) {
+	public Job addJob(UUID id, Job job) {
 		// TODO Auto-generated method stub
+		job.setRecruiter(Rservice.findRecruiter(id));
 		Job tempObj = repo.save(job);
-		Rservice.findRecruiter(id).getJobList().add(tempObj);
+//		System.out.println(tempObj);
+		List<Job> tempJobList = Rservice.findRecruiter(id).getJobList();
+//		if(tempJobList==null) {
+//			tempJobList = new ArrayList<Job>();
+//		}
+		tempJobList.add(tempObj);
+//		System.out.println(tempJobList);
+		Rservice.findRecruiter(id).setJobList(tempJobList);
+		return tempObj;
+//		return null;
 	}
+
+	public Job findJob(UUID id) {
+		// TODO Auto-generated method stub
+		return repo.findById(id).orElse(null);
+	}
+
+	
 
 	
 

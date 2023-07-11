@@ -1,4 +1,5 @@
 package com.example.demo.service;
+import java.util.ArrayList;
 import java.util.UUID;
 
 import com.example.demo.entity.Job;
@@ -20,6 +21,9 @@ public class RecruiterService {
 		if(tempObj!=null) {
 			throw new Exception("This user already exists ");
 		}
+//		if(recruiter.getJobList()==null) {
+//			recruiter.setJobList(new ArrayList<Job>());
+//		}
 		return repo.save(recruiter);
 	}
 

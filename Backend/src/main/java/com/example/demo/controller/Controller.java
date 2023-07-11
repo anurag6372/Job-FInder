@@ -4,11 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.entity.Job;
 import com.example.demo.entity.JobSeeker;
@@ -18,6 +14,7 @@ import com.example.demo.service.JobService;
 import com.example.demo.service.RecruiterService;
 
 @RestController
+//@RequestMapping(value = "")
 public class Controller {
 	@Autowired
 	JobSeekerService JSservice;
@@ -58,17 +55,31 @@ public class Controller {
 		return JSservice.loginJobSeeker(jobSeeker);
 	}
 	
-	@GetMapping("{JSid}/applyForJob/{jobId}")
-	public Job getJob(@PathVariable("jobId") UUID id,@PathVariable("JSid") UUID jsId) {
-		return Jservice.getJob(jsId,id);
+	
+	@GetMapping("fetchJob/{jobId}")
+	public Job fetchJob(@PathVariable("jobId") UUID id) {
+		return Jservice.findJob(id);
+	}
+	
+	@GetMapping("fetchJobSeeker/{JSid}")
+	public JobSeeker fetchJobSeeker(@PathVariable("JSid") UUID id) {
+		return JSservice.findJobSeeker(id);
+	}
+	
+	@GetMapping("fetchRecruiter/{Rid}")
+	public Recruiter fetchRecruiter(@PathVariable("Rid") UUID id) {
+		return Rservice.findRecruiter(id);
 	}
 	
 	@PostMapping("/addJob/{Rid}")
-	public void addJob(@PathVariable("Rid") UUID id,@RequestBody Job job) {
-		Jservice.addJob(id,job);
+	public Job addJob(@PathVariable("Rid") UUID id,@RequestBody Job job) {
+		return Jservice.addJob(id,job);
 	}
 	
-	
+	@GetMapping("{JSid}/applyForJob/{jobId}")
+	public void getJob(@PathVariable("jobId") UUID id,@PathVariable("JSid") UUID jsId) {
+		JSservice.applyForJob(jsId,id);
+	}
 	
 	
 }
