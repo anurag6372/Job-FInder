@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import com.example.demo.dao.JobRepository;
 import com.example.demo.entity.Job;
+import com.example.demo.entity.JobSeeker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +15,10 @@ public class JobService {
 
 	@Autowired
 	JobRepository repo;
-	
+
 	@Autowired
 	RecruiterService Rservice;
-	
+
 	public List<Job> allJobs() {
 
 		return repo.findAll();
@@ -45,7 +46,7 @@ public class JobService {
 		tempJobList.add(tempObj);
 //		System.out.println(tempJobList);
 		Rservice.findRecruiter(id).setJobList(tempJobList);
-		return tempObj;
+		return repo.findById(tempObj.getId()).orElse(null);
 //		return null;
 	}
 
@@ -54,8 +55,8 @@ public class JobService {
 		return repo.findById(id).orElse(null);
 	}
 
-	
 
-	
-
+	public void updateJob(UUID id, JobSeeker tempJobSeeker) {
+		repo.updateJob(id,tempJobSeeker);
+	}
 }

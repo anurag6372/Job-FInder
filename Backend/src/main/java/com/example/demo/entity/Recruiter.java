@@ -24,6 +24,7 @@ public class Recruiter {
     private String position;
     private String companyName;
     @JsonIgnoreProperties({"recruiter"})
+    @JsonManagedReference
     @OneToMany(mappedBy="recruiter")
     private List<Job> jobList;
 

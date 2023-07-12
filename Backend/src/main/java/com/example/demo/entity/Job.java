@@ -37,14 +37,15 @@ public class Job {
     @ManyToOne
     private Recruiter recruiter;
 
-    @ManyToMany(mappedBy = "jobList")
-    private List<JobSeeker> jobSeekerList ;
+//    @ManyToMany(mappedBy = "jobList")
+//    private List<JobSeeker> jobSeekerList = new ArrayList<JobSeeker>();
+    @ManyToOne
+    private JobSeeker jobSeeker;
 
     public Job() {
     }
 
-    public Job(UUID id, String title, String companyName, List<String> tags, String description, String location, Double salary, List<String> skillsRequired,
-               String applyLink, Date lastApplyDate, int experience, Date dateOfPosting, Recruiter recruiter, List<JobSeeker> jobSeekerList) {
+    public Job(UUID id, String title, String companyName, List<String> tags, String description, String location, Double salary, List<String> skillsRequired, String applyLink, Date lastApplyDate, int experience, Date dateOfPosting, Recruiter recruiter, JobSeeker jobSeeker) {
         this.id = id;
         this.title = title;
         this.companyName = companyName;
@@ -58,7 +59,7 @@ public class Job {
         this.experience = experience;
         this.dateOfPosting = dateOfPosting;
         this.recruiter = recruiter;
-        this.jobSeekerList = jobSeekerList;
+        this.jobSeeker = jobSeeker;
     }
 
     public UUID getId() {
@@ -156,8 +157,8 @@ public class Job {
     public void setDateOfPosting(Date dateOfPosting) {
         this.dateOfPosting = dateOfPosting;
     }
-    
-   
+
+    @JsonBackReference
     public Recruiter getRecruiter() {
         return recruiter;
     }
@@ -166,32 +167,15 @@ public class Job {
         this.recruiter = recruiter;
     }
 
-<<<<<<< Updated upstream
-   
-    public JobSeeker getJobseeker() {
-        return jobseeker;
-=======
-    public List<JobSeeker> getJobSeekerList() {
-        return jobSeekerList;
->>>>>>> Stashed changes
+    @JsonBackReference
+    public JobSeeker getJobSeeker() {
+        return jobSeeker;
     }
 
-    public void setJobSeekerList(List<JobSeeker> jobSeekerList) {
-        this.jobSeekerList = jobSeekerList;
+    public void setJobSeeker(JobSeeker jobSeeker) {
+        this.jobSeeker = jobSeeker;
     }
 
-<<<<<<< Updated upstream
-	@Override
-	public String toString() {
-		return "Job [id=" + id + ", title=" + title + ", companyName=" + companyName + ", tags=" + tags
-				+ ", description=" + description + ", location=" + location + ", salary=" + salary + ", skillsRequired="
-				+ skillsRequired + ", applyLink=" + applyLink + ", lastApplyDate=" + lastApplyDate + ", experience="
-				+ experience + ", dateOfPosting=" + dateOfPosting + ", recruiter=" + recruiter + ", jobseeker="
-				+ jobseeker + "]";
-	}
-
-    
-=======
     @Override
     public String toString() {
         return "Job{" +
@@ -208,8 +192,7 @@ public class Job {
                 ", experience=" + experience +
                 ", dateOfPosting=" + dateOfPosting +
                 ", recruiter=" + recruiter +
-                ", jobSeekerList=" + jobSeekerList +
+                ", jobSeeker=" + jobSeeker +
                 '}';
     }
->>>>>>> Stashed changes
 }
