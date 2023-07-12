@@ -25,10 +25,15 @@ public class JobSeeker {
     private String password;
     private List<String> skills;
     private String portfolioLink;
-
-    @JsonIgnoreProperties({"jobSeeker"})
-    @OneToMany(mappedBy = "jobSeeker")
+<<<<<<< Updated upstream
+// @JsonIgnoreProperties({"jobseeker"})
+    @OneToMany(mappedBy="jobseeker")
     private List<Job> jobList;
+=======
+
+    @ManyToMany
+    private List<Job> jobList ;
+>>>>>>> Stashed changes
 
 
     public JobSeeker() {
@@ -92,7 +97,7 @@ public class JobSeeker {
         this.portfolioLink = portfolioLink;
     }
 
-    @JsonManagedReference
+//    @JsonManagedReference
     public List<Job> getJobList() {
         return jobList;
     }

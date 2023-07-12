@@ -77,8 +77,7 @@ public class Controller {
 	}
 	
 	@GetMapping("{JSid}/applyForJob/{jobId}")
-	public void getJob(@PathVariable("jobId") UUID id,@PathVariable("JSid") UUID jsId) throws Exception {
-
+	public void getJob(@PathVariable("jobId") UUID id,@PathVariable("JSid") UUID jsId) {
 		JSservice.applyForJob(jsId,id);
 	}
 	

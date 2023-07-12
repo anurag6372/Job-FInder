@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.dao.JobRepository;
 import com.example.demo.dao.JobSeekerRepository;
 import com.example.demo.entity.Job;
 import com.example.demo.entity.JobSeeker;
@@ -46,67 +45,19 @@ public class JobSeekerService {
 	}
 
 	public void applyForJob(UUID jsId, UUID id) {
-//		Job tempJob=Jservice.findJob(id);
-//		JobSeeker tempJobSeeker = repo.findById(jsId).orElse(null);
-//		List<Job> tempJobList = tempJobSeeker.getJobList();
-//		if(tempJobList==null) {
-//			tempJobList = new ArrayList<Job>();
-//		}
-//		tempJobList.add(tempJob);
-//		repo.findById(jsId).orElse(null).setJobList(tempJobList);
-//		List<JobSeeker> tempJobSeekerList = tempJob.getJobSeekerList();
-//		if(tempJobSeekerList==null) {
-//			tempJobSeekerList=new ArrayList<JobSeeker>();
-//		}
-//		tempJobSeekerList.add(repo.findById(jsId).orElse(null));
-//		Jservice.findJob(id).setJobSeekerList(tempJobSeekerList);
 		Job tempJob=Jservice.findJob(id);
-		System.out.println("This is here");
-		if(findJobSeeker(jsId).getJobList()==null) {
-			System.out.println(findJobSeeker(jsId).getJobList());
-			findJobSeeker(jsId).setJobList(new ArrayList<Job>());
-			System.out.println("is it working");
+		JobSeeker tempJobSeeker = repo.findById(jsId).orElse(null);
+		List<Job> tempJobList = tempJobSeeker.getJobList();
+		if(tempJobList==null) {
+			tempJobList = new ArrayList<Job>();
 		}
-		findJobSeeker(jsId).getJobList().add(tempJob);
-		JobSeeker tempJobSeeker = findJobSeeker(jsId);
-//		System.out.println(tempJobSeeker);
-		if(Jservice.findJob(id).getJobSeekerList()==null) {
-			Jservice.findJob(id).setJobSeekerList(new ArrayList<JobSeeker>());
-			System.out.println("working");
-		}
-		List<JobSeeker> tempJobSeekerList = Jservice.findJob(id).getJobSeekerList();
-		tempJobSeekerList.add(tempJobSeeker);
-		Jservice.findJob(id).setJobSeekerList(tempJobSeekerList);
-		tempJobSeeker.setJobList(findJobSeeker(jsId).getJobList());
-		repo.saveAndFlush(tempJobSeeker);
+		tempJobList.add(tempJob);
+		repo.findById(jsId).orElse(null).setJobList(tempJobList);
 	}
-
 
 	public JobSeeker findJobSeeker(UUID id) {
 		// TODO Auto-generated method stub
 		return repo.findById(id).orElse(null);
 	}
 
-//	public void applyForJob(UUID jsId, UUID id) throws Exception {
-//		Job tempJob = Jservice.findJob(id);
-//		if(tempJob==null){
-//			throw new Exception("Job didn't exists");
-//		}
-////		if(repo.findById(jsId)==null){
-////			throw new Exception("Seeker didn't exists");
-////		}
-////		List<Job> tempJobList = repo.findById(jsId).orElse(null).getJobList();
-////		if(tempJobList==null){
-////			tempJobList=new ArrayList<Job>();
-////		}
-////		tempJobList.add(tempJob);
-//
-//		JobSeeker tempJobSeeker = repo.findById(jsId).orElse(null);
-//		if(tempJobSeeker==null){
-//			throw new Exception("Job Seeker didn't exists");
-//		}
-//		Jservice.updateJob(id,tempJobSeeker);
-////		repo.updateJobList(jsId,tempJobList);
-////		repo.findById(jsId).orElse(null).setJobList(tempJobList);
-//	}
 }
