@@ -1,6 +1,8 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -14,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity(name="Recruiter")
 @Data
 @Embeddable
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Recruiter {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

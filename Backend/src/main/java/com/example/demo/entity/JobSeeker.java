@@ -1,6 +1,8 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -15,6 +17,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Data
 
 @Embeddable
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class JobSeeker {
 
     @Id
@@ -25,15 +28,11 @@ public class JobSeeker {
     private String password;
     private List<String> skills;
     private String portfolioLink;
-<<<<<<< Updated upstream
-// @JsonIgnoreProperties({"jobseeker"})
-    @OneToMany(mappedBy="jobseeker")
-    private List<Job> jobList;
-=======
+
 
     @ManyToMany
     private List<Job> jobList ;
->>>>>>> Stashed changes
+
 
 
     public JobSeeker() {

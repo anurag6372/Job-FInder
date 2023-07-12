@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 
 import lombok.Data;
@@ -16,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 @Entity(name="Job")
 @Data
 @Embeddable
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Job {
 
     @Id
@@ -166,32 +169,14 @@ public class Job {
         this.recruiter = recruiter;
     }
 
-<<<<<<< Updated upstream
-   
-    public JobSeeker getJobseeker() {
-        return jobseeker;
-=======
     public List<JobSeeker> getJobSeekerList() {
         return jobSeekerList;
->>>>>>> Stashed changes
     }
 
     public void setJobSeekerList(List<JobSeeker> jobSeekerList) {
         this.jobSeekerList = jobSeekerList;
     }
 
-<<<<<<< Updated upstream
-	@Override
-	public String toString() {
-		return "Job [id=" + id + ", title=" + title + ", companyName=" + companyName + ", tags=" + tags
-				+ ", description=" + description + ", location=" + location + ", salary=" + salary + ", skillsRequired="
-				+ skillsRequired + ", applyLink=" + applyLink + ", lastApplyDate=" + lastApplyDate + ", experience="
-				+ experience + ", dateOfPosting=" + dateOfPosting + ", recruiter=" + recruiter + ", jobseeker="
-				+ jobseeker + "]";
-	}
-
-    
-=======
     @Override
     public String toString() {
         return "Job{" +
@@ -211,5 +196,4 @@ public class Job {
                 ", jobSeekerList=" + jobSeekerList +
                 '}';
     }
->>>>>>> Stashed changes
 }
