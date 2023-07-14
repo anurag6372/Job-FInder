@@ -30,16 +30,16 @@
   position: absolute;
   border-radius: 50%;
 }
-/* .shape:first-child {
+.shape:first-child {
   background: linear-gradient(#1845ad, #23a2f6);
-  left: -80px;
-  top: -80px;
+  left: 100px;
+  top: -125px;
 }
 .shape:last-child {
   background: linear-gradient(to right, #ff512f, #f09819);
-  right: -30px;
-  bottom: -80px;
-} */
+  right: -301px;
+  bottom: -50px;
+}
 form {
   height: 520px;
   width: 400px;
@@ -99,8 +99,13 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
-.social {
+p{
+  display: flex;
+  justify-content: center;
   margin-top: 30px;
+}
+.social {
+  margin-top: 3px;
   display: flex;
 }
 .social div {
