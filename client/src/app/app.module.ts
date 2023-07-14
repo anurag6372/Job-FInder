@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './Components/login/login.component';
+import { RRegisterComponent } from './Components/r-register/r-register.component';
+import { JSRegisterComponent } from './Components/js-register/js-register.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    RRegisterComponent,
+    JSRegisterComponent
   ],
   imports: [
     BrowserModule,
