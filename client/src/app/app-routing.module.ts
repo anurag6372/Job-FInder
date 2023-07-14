@@ -6,10 +6,10 @@ import { LoginComponent } from './Components/login/login.component';
 import { HomeComponent } from './Components/home/home.component';
 
 const routes: Routes = [
-  { path: '',component: HomeComponent},
-  { path: 'l', component: LoginComponent },
-  { path: 'rr', component: RRegisterComponent },
-  { path: 'jsr', component: JSRegisterComponent },
+  { path: "",component: HomeComponent},
+  { path: "l", component: LoginComponent },
+  { path: "rr", component: RRegisterComponent },
+  { path: "jsr", component: JSRegisterComponent },
 ];
 
 @NgModule({
