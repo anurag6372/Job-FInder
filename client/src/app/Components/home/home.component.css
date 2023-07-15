@@ -1,0 +1,45 @@
+
+
+.ng-container{
+    background-color: rgb(236, 246, 254);
+}
+
+.navbar{
+    padding: 20px;
+}
+
+h1{
+    font-family: cursive;
+    font-style: italic;
+}
+.navbar span{
+    display: flex;
+    justify-content: space-around;
+}
+
+.sidepanel{
+    display: flex;
+    justify-content: space-between;
+}
+
+button{
+ padding: 3px;
+ margin: 0px 5px 0px 5px;
+ border-radius: 7px;
+ border: 1px solid black;
+}
+
+/* input{
+    border: 1px solid black;
+} */
+
+.searchbar{
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 0%;
+    
+}
+.searchbar button{
+    margin: 0px;
+    border: none;
+}

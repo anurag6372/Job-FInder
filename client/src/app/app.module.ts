@@ -8,6 +8,7 @@ import { RRegisterComponent } from './Components/r-register/r-register.component
 import { JSRegisterComponent } from './Components/js-register/js-register.component';
 import { HomeComponent } from './Components/home/home.component';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
