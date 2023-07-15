@@ -7,8 +7,11 @@ import { LoginComponent } from './Components/login/login.component';
 import { RRegisterComponent } from './Components/r-register/r-register.component';
 import { JSRegisterComponent } from './Components/js-register/js-register.component';
 import { HomeComponent } from './Components/home/home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { JobsComponent } from './Components/jobs/jobs.component';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +19,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     RRegisterComponent,
     JSRegisterComponent,
-    HomeComponent
+    HomeComponent,
+    JobsComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
