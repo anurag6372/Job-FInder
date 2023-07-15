@@ -8,9 +8,14 @@ import { RRegisterComponent } from './Components/r-register/r-register.component
 import { JSRegisterComponent } from './Components/js-register/js-register.component';
 import { HomeComponent } from './Components/home/home.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { JobsComponent } from './Components/jobs/jobs.component';
+
+
+
 
 
 @NgModule({
@@ -19,7 +24,9 @@ import { FormsModule , ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RRegisterComponent,
     JSRegisterComponent,
-    HomeComponent
+    HomeComponent,
+    JobsComponent,
+    
   ],
   imports: [
     BrowserModule,

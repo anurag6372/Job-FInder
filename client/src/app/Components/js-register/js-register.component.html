@@ -5,8 +5,8 @@
   </div>
   <form [formGroup]="myForm!">
     <h3>Create Account</h3>
-
     <input type="text" placeholder="Name" id="name" />
+
     
     <input type="text" placeholder="Email" id="username"  formControlName="email"/>
     
@@ -22,6 +22,7 @@
     
     <input type="password" placeholder="Conform Password" id="conformpassword" formControlName="conformpassword"/>
     
+
     <input type="text" placeholder="Portfolio Link" id="portfolioLink" />
     
     <div class="skill">
@@ -41,8 +42,6 @@
         </svg>
       </button>
     </div>
-
-
     <div class="">
       <!-- <h6>Display Skills</h6> -->
       <div class="show-skills" *ngIf="display">
@@ -59,7 +58,6 @@
                     <rect width="18" height="18" fill="white"/>
                   </clipPath>
                 </defs>
-
               </svg>
             </button>
           </span>
@@ -74,7 +72,9 @@
       <div class="fb">Already have an Account. <a href="/l">Sign In</a></div>
     </div>
   </form>
+
 </div>
 
   
+
 
