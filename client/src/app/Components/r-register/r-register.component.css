@@ -67,6 +67,10 @@ form h3 {
   line-height: 42px;
   text-align: center;
 }
+form img {
+  display: block;
+  margin: auto;
+}
 
 label {
   display: block;
