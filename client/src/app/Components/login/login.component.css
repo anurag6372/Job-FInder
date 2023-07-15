@@ -41,7 +41,7 @@
   bottom: -50px;
 }
 form {
-  height: 520px;
+  /* height: 520px; */
   width: 400px;
   background-color: rgba(255, 255, 255, 0.8);
   position: absolute;
@@ -79,6 +79,7 @@ input {
   height: 50px;
   width: 100%;
   background-color: rgba(215, 52, 93, 0.07);
+  color: black !important;
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 8px;
@@ -86,7 +87,7 @@ input {
   font-weight: 300;
 }
 ::placeholder {
-  color: #000000;
+  color: #00000086;
 }
 button {
   margin-top: 50px;

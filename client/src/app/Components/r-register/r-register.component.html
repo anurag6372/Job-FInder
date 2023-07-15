@@ -3,14 +3,24 @@
       <div class="shape"></div>
       <div class="shape"></div>
     </div>
-    <form>
+    <form [formGroup]="myForm!">
       <h3>Create Account</h3>
   
       
       <input type="text" placeholder="Name" id="username" />
-      <input type="text" placeholder="Email" id="email" />
-      <input type="password" placeholder="Password" id="password" />
-      <input type="password" placeholder="Conform Password" id="conformpassword" />
+      <input type="text" placeholder="Email" id="username"  formControlName="email"/>
+    
+      <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
+        <small class="text-danger">Enter a valid email</small>
+      </div>
+
+      <input type="password" placeholder="Password" id="password" formControlName="password"/>
+      
+      <div *ngIf="myForm.get('password')?.invalid && (myForm.get('password')?.dirty || myForm.get('password')?.touched)">
+        <small class="text-danger">password should contain atleast <b>One number</b>, <b>One special character</b> and length should between <b>6-16</b></small>
+      </div>
+      
+      <input type="password" placeholder="Conform Password" id="conformpassword" formControlName="conformpassword"/>
       <input type="text" placeholder="Company Name" id="companyname" />
       <input type="text" placeholder="Position" id="position" />
   
