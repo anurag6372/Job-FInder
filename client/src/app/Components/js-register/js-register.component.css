@@ -89,8 +89,8 @@ input {
 ::placeholder {
   color: #00000086;
 }
-button {
-  margin-top: 50px;
+.button {
+  margin-top: 25px;
   width: 100%;
   background-color: #4b4b6a;
   color: #fff !important;
@@ -142,16 +142,27 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  max-height: 160px;
+  max-height: 92px;
   overflow-y: auto;
 }
 
 .show-skills > span {
+  display: flex;
+  width: max-content;
+  flex-wrap: 1;
   border: 1px solid #0000002b;
   padding: 4px 8px;
   border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
 }
 .skill {
   display: flex;
   gap: 8px;
+}
+
+.btn-close{
+  background-color: transparent;
+  padding: 0;
 }

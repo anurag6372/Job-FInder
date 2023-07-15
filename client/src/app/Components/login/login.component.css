@@ -116,13 +116,18 @@ p{
   background-color: rgba(255, 255, 255, 0.27);
   color: #060606;
   text-align: center;
+  
 }
 .social div:hover {
   background-color: rgba(255, 255, 255, 0.47);
 }
 .social .fb {
   margin-left: 0px;
+  
 }
 .social i {
   margin-right: 4px;
+}
+.link{
+  text-decoration: none !important;
 }
