@@ -1,0 +1,21 @@
+.btn-addjob{
+    font-size: 24px;
+    font-weight: 500;
+    padding:12px 36px;
+    border-radius: 8px;
+    color: rgb(65, 83, 185);
+    background-color: rgb(222, 247, 247);
+}
+.dashboard-head h1{
+    font-size: 36px;
+    font-weight: 600;
+    color: rgb(65, 83, 185);
+}
+
+.dashboard-head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}

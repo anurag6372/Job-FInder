@@ -13,6 +13,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { JobsComponent } from './Components/jobs/jobs.component';
+import { JobDetailComponent } from './Components/job-detail/job-detail.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { RloginComponent } from './Components/rlogin/rlogin.component';
+import { AddjobComponent } from './Components/addjob/addjob.component';
+import { JobListComponent } from './Components/job-list/job-list.component';
 
 
 
@@ -26,6 +31,11 @@ import { JobsComponent } from './Components/jobs/jobs.component';
     JSRegisterComponent,
     HomeComponent,
     JobsComponent,
+    JobDetailComponent,
+    NavbarComponent,
+    RloginComponent,
+    AddjobComponent,
+    JobListComponent,
     
   ],
   imports: [

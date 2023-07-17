@@ -1,0 +1,14 @@
+.wrap{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    flex-grow: 1;
+}
+
+form{
+    display: flex;
+}
