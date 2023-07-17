@@ -7,7 +7,7 @@
 }
 .body-login {
   /* background: #26cef9; */
-  background-image: url("src/assets/shutterstoc.jpg");
+  background-image: url("src/assets/shutterstoc.jpg") !important;
   background-repeat: no-repeat;
   background-size: cover;
 
