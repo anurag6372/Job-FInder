@@ -8,6 +8,9 @@ import { JobDetailComponent } from './Components/job-detail/job-detail.component
 import { RloginComponent } from './Components/rlogin/rlogin.component';
 import { AddjobComponent } from './Components/addjob/addjob.component';
 import { JobListComponent } from './Components/job-list/job-list.component';
+import { JSProfileComponent } from './Components/jsprofile/jsprofile.component';
+import { RProfileComponent } from './Components/rprofile/rprofile.component';
+import { ProfileComponent } from './Components/profile/profile.component';
 
 const routes: Routes = [
   { path: "",component: HomeComponent},
@@ -18,7 +21,8 @@ const routes: Routes = [
   { path: "rlogin", component: RloginComponent},
   { path: "addjob", component: AddjobComponent},
   { path: "jobList", component: JobListComponent},
-
+  { path: "jsProfile", component: ProfileComponent},
+  { path: "rProfile", component: ProfileComponent}
 
 ];
 
