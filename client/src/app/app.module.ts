@@ -18,6 +18,10 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { RloginComponent } from './Components/rlogin/rlogin.component';
 import { AddjobComponent } from './Components/addjob/addjob.component';
 import { JobListComponent } from './Components/job-list/job-list.component';
+import { JobListItemComponent } from './Components/job-list-item/job-list-item.component';
+import { JSProfileComponent } from './Components/jsprofile/jsprofile.component';
+import { RProfileComponent } from './Components/rprofile/rprofile.component';
+import { ProfileComponent } from './Components/profile/profile.component';
 
 
 
@@ -36,6 +40,10 @@ import { JobListComponent } from './Components/job-list/job-list.component';
     RloginComponent,
     AddjobComponent,
     JobListComponent,
+    JobListItemComponent,
+    JSProfileComponent,
+    RProfileComponent,
+    ProfileComponent,
     
   ],
   imports: [
