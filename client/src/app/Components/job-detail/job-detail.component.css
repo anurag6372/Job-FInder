@@ -1,0 +1,337 @@
+.desktop-1,
+.desktop-1 * {
+  box-sizing: border-box;
+}
+.desktop-1 {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+  overflow: hidden;
+}
+.nav {
+  background: #3170ac;
+  padding: 24px 144px 24px 144px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0px 3px 21px 0px rgba(8, 9, 46, 0.15);
+  overflow: hidden;
+}
+.logo {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.job-hunter-website-favicon-color-1 {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+.job-hunter {
+  color: #ffffff;
+  text-align: left;
+  font: 700 28px "Inter", sans-serif;
+  position: relative;
+}
+.search-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.frame-1 {
+  background: #f2f8fe;
+  border-radius: 35px;
+  padding: 12px 18px 12px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 320px;
+  position: relative;
+  overflow: hidden;
+}
+.search {
+  color: rgba(11, 40, 68, 0.63);
+  text-align: left;
+  font: 400 14px "Inter", sans-serif;
+  position: relative;
+}
+.frame-2 {
+  background: #f2f8fe;
+  border-radius: 82px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  width: 48px;
+  position: relative;
+}
+.material-symbols-search {
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+}
+.btn-login {
+  background: #f2f8fe;
+  border-radius: 8px;
+  padding: 12px 24px 12px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.log-in {
+  color: #0b2844;
+  text-align: left;
+  font: 500 16px "Inter", sans-serif;
+  position: relative;
+}
+.job-description {
+  color: #000000;
+  text-align: center;
+  font: 300 64px/119.52% "Inter", sans-serif;
+  position: absolute;
+  left: 0px;
+  top: 96px;
+  align-self: stretch;
+  height: 195px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.in-pune-mumbai {
+  color: #000000;
+  text-align: center;
+  font: 700 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: 146px;
+  top: 343px;
+  width: 131px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.job-description2 {
+  color: #000000;
+  text-align: center;
+  font: 400 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: 142px;
+  top: 407px;
+  width: 134px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contrary-to-popular-belief-lorem-ipsum-is-not-simply-random-text-it-has-roots-in-a-piece-of-classical-latin-literature-from-45-bc-making-it-over-2000-years-old-richard-mc-clintock-a-latin-professor-at-hampden-sydney-college-in-virginia-looked-up-one-of-the-more-obscure-latin-words-consectetur-from-a-lorem-ipsum-passage-and-going-through-the-cites-of-the-word-in-classical-literature-discovered-the-undoubtable-source-lorem-ipsum-comes-from-sections-1-10-32-and-1-10-33-of-de-finibus-bonorum-et-malorum-the-extremes-of-good-and-evil-by-cicero-written-in-45-bc-this-book-is-a-treatise-on-the-theory-of-ethics-very-popular-during-the-renaissance-the-first-line-of-lorem-ipsum-lorem-ipsum-dolor-sit-amet-comes-from-a-line-in-section-1-10-32 {
+  color: #000000;
+  text-align: left;
+  font: 400 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: 146px;
+  top: 409px;
+  width: 1066px;
+  height: 169px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.skills-required {
+  color: #000000;
+  text-align: left;
+  font: 400 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: 146px;
+  top: 587px;
+  width: 120px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.tags {
+  color: #000000;
+  text-align: left;
+  font: 400 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: 146px;
+  top: 783px;
+  width: 120px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.apply-link {
+  color: #000000;
+  text-align: left;
+  font: 400 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: 146px;
+  top: 731px;
+  width: 120px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.experience-needed {
+  color: #000000;
+  text-align: left;
+  font: 400 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: calc(50% - 574px);
+  top: calc(50% - -127px);
+  width: 152px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.salary-offered {
+  color: #000000;
+  text-align: left;
+  font: 400 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: calc(50% - 574px);
+  top: calc(50% - -173px);
+  width: 152px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.java-python-spring-postgre-sql-my-sql-angular {
+  color: #000000;
+  text-align: left;
+  font: 700 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: calc(50% - 452px);
+  top: calc(50% - -74px);
+  width: 938px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.java-python-spring-postgre-sql-my-sql-angular2 {
+  color: #000000;
+  text-align: left;
+  font: 700 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: calc(50% - 518px);
+  top: calc(50% - -270px);
+  width: 938px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+._0-years {
+  color: #000000;
+  text-align: left;
+  font: 700 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: calc(50% - 409px);
+  top: calc(50% - -127px);
+  width: 901px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.inr-7-12-000 {
+  color: #000000;
+  text-align: left;
+  font: 700 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: calc(50% - 452px);
+  top: calc(50% - -171px);
+  width: 901px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.https-www-careers-argusoft-com {
+  color: #000000;
+  text-align: left;
+  font: 700 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: calc(50% - 478px);
+  top: calc(50% - -220px);
+  width: 901px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.software-developer-job {
+  color: #000000;
+  text-align: center;
+  font: 300 32px/119.52% "Inter", sans-serif;
+  position: absolute;
+  left: 137px;
+  top: 291px;
+  width: 379px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.posted-12-hours-ago {
+  color: #000000;
+  text-align: left;
+  font: 200 15px/114.52% "Lexend Deca", sans-serif;
+  position: absolute;
+  left: 1054px;
+  top: 783px;
+  width: 152px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.details{
+    width: 100vw;
+    max-height: fit-content;
+}
+
+.job-description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
