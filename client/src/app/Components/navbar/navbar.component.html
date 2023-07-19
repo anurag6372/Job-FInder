@@ -37,19 +37,67 @@
         Applied Jobs
     </div>
   </div> -->
-  <div class="menu">
+  <div [ngSwitch]="menuType">
 
-    <div class="btn-login">
-      <div class="log-in"><a href="/rProfile">Profile</a></div>
+    <div class="menu" *ngSwitchCase="'home'">
+      <div class="btn-login">
+        <div class="log-in"><a routerLink="/jsProfile" >Profile</a></div>
+      </div>
+      <div class="btn-login" >
+        <div class="log-in"><a routerLink="/jobList">Applied Jobs</a></div>
+      </div>
+      <div class="btn-login" >
+        <div class="log-in" ><a routerLink="/l" >Log In</a></div>
+      </div>
+      <div class="btn-login" >
+        <div class="log-in"><a routerLink="/" >Log Out</a></div>
+      </div>
     </div>
-    <div class="btn-login" *ngIf="menuType==='default'">
-      <div class="log-in"><a href="/jobList">Applied Jobs</a></div>
+
+    <div class="menu" *ngSwitchCase="'rlogin'">
+      <div class="btn-login">
+        <div class="log-in"><a routerLink="/rProfile" >Profile</a></div>
+      </div>
+      <div class="btn-login" >
+        <div class="log-in"><a routerLink="/" >Log Out</a></div>
+      </div>
     </div>
-    <div class="btn-login" *ngIf="!isLoggedIn">
+
+    <!-- <div class="btn-login" *ngIf="!isLoggedIn">
       <div class="log-in"><a href="/l" *ngIf="menuType==='default'" >Log In</a></div>
     </div>
     <div class="btn-login" *ngIf="isLoggedIn">
-      <div class="log-in"><a (click)="onLogOut()" *ngIf="menuType==='default'">Log Out</a></div>
+      <div class="log-in"><a (click)="onLogOut()" *ngIf="menuType==='default'">Log Out</a></div> -->
+
+
+    <div class="menu" *ngSwitchCase="'rprofile'">
+      <div class="btn-login">
+        <div class="log-in"><a routerLink="/rlogin" >Home</a></div>
+      </div>
+      <div class="btn-login" >
+        <div class="log-in"><a routerLink="/" >Log Out</a></div>
+      </div>
     </div>
+
+    <div class="menu" *ngSwitchCase="'joblist'">
+      <div class="btn-login">
+        <div class="log-in"><a routerLink="/rlogin" >Home</a></div>
+      </div>
+      <div class="btn-login" >
+        <div class="log-in"><a routerLink="/" >Log Out</a></div>
+      </div>
+
+    </div>
+
+    <div class="menu" *ngSwitchCase="'addjob'">
+      <div class="btn-login">
+        <div class="log-in"><a routerLink="/rlogin" >Home</a></div>
+      </div>
+      <div class="btn-login" >
+        <div class="log-in"><a routerLink="/" >Log Out</a></div>
+      </div>
+    </div>
+
+
   </div>
 </div>

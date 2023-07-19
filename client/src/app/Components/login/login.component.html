@@ -4,7 +4,7 @@
     <div class="shape"></div>
   </div>
   <form [formGroup]="myForm!">
-    <a [href]="''"><img src="../../../assets/job-hunter-low-resolution-logo-color-on-transparent-background.png" width="100"/></a>
+    <a [routerLink]="''"><img src="../../../assets/job-hunter-low-resolution-logo-color-on-transparent-background.png" width="100"/></a>
     <h3>Login Here</h3>
 
     <label for="username">Username</label>
@@ -26,9 +26,9 @@
       <button (click)="OnLogIn()" routerLink="/">Log In</button>
     <p>Sign Up As</p>
     <div class="social">
-      <div class="go"><a href="/jsr" class="link">Job Seeker</a></div>
+      <div class="go"><a routerLink="/jsr" class="link">Job Seeker</a></div>
       <div class="fb">
-        <a href="/rr" class="link">Recruiter</a></div>
+        <a routerLink="/rr" class="link">Recruiter</a></div>
     </div>
   </form>
 </div>
