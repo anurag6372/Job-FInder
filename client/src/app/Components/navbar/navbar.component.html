@@ -8,7 +8,7 @@
     <div class="job-hunter">Job Hunter</div>
   </div>
 
-  <div class="search-bar">
+  <div class="search-bar" *ngIf="menuType==='default'">
     <input type="text" class="search frame-1" placeholder="search jobs" />
 
     <div class="frame-2">
@@ -49,6 +49,13 @@
   </div> -->
 
   <div class="btn-login">
-    <div class="log-in"><a href="/l">Log In</a></div>
+    <div class="log-in"><a href="/rProfile">Profile</a></div>
+  </div>
+  <div class="btn-login" *ngIf="menuType==='default'">
+    <div class="log-in"><a href="/jobList">Applied Jobs</a></div>
+  </div>
+  <div class="btn-login vv" >
+    <div class="log-in"><a href="/l" *ngIf="menuType==='default'">Log In</a></div>
+    <div class="log-in"><a href="/l" *ngIf="menuType==='default'">Log Out</a></div>
   </div>
 </div>

@@ -82,7 +82,7 @@
     position: relative;
     overflow: visible;
   }
-  .btn-login {
+  .btn-login, .vv {
     background: #f2f8fe;
     border-radius: 8px;
     padding: 12px 24px 12px 24px;
@@ -94,6 +94,7 @@
     flex-shrink: 0;
     position: relative;
     cursor: pointer;
+    margin: 10px;
   
   }
   .log-in {
@@ -101,6 +102,11 @@
     text-align: left;
     font: 500 16px "Inter", sans-serif;
     position: relative;
+    
+  }
+
+  .vv{
+    justify-content: space-between !important;
   }
 
   .nav-items{

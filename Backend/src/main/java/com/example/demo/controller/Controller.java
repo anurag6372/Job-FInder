@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+//import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.entity.Job;
@@ -59,32 +59,32 @@ public class Controller {
 	}
 
 	@GetMapping("/job/{text}")
-	@PreAuthorize("hasAuthority('ROLE_USER')")
+//	@PreAuthorize("hasAuthority('ROLE_USER')")
 	public List<Job> selectedJobs(@PathVariable("text") String text){
 		return Jservice.selectedJobs(text);
 	}
 	
 
 	@GetMapping("fetchJobSeeker/{JSid}")
-	@PreAuthorize("hasAuthority('ROLE_USER')")
+//	@PreAuthorize("hasAuthority('ROLE_USER')")
 	public JobSeeker fetchJobSeeker(@PathVariable("JSid") UUID id) {
 		return JSservice.findJobSeeker(id);
 	}
 
 	@GetMapping("{JSid}/applyForJob/{jobId}")
-	@PreAuthorize("hasAuthority('ROLE_USER')")
+//	@PreAuthorize("hasAuthority('ROLE_USER')")
 	public void getJob(@PathVariable("jobId") UUID id,@PathVariable("JSid") UUID jsId) {
 		JSservice.applyForJob(jsId,id);
 	}
 
 	@GetMapping("fetchRecruiter/{Rid}")
-	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
+//	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	public Recruiter fetchRecruiter(@PathVariable("Rid") UUID id) {
 		return Rservice.findRecruiter(id);
 	}
 	
 	@PostMapping("/addJob/{Rid}")
-	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
+//	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	public Job addJob(@PathVariable("Rid") UUID id,@RequestBody Job job) {
 		return Jservice.addJob(id,job);
 	}
