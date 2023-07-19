@@ -17,7 +17,13 @@
     <label for="password">Password</label>
     <input type="password" placeholder="Password" id="password" formControlName="password"/>
 
-    <button>Log In</button>
+    <label for="role">Role</label>
+    <select name="role" id="role">
+      <option value="none" selected disabled hidden>Select an Option</option>
+      <option value="Recruiter">Recruiter</option>
+      <option value="Job Seeker">Job Seeker</option>
+    </select>
+      <button>Log In</button>
     <p>Sign Up As</p>
     <div class="social">
       <div class="go"><a href="/jsr" class="link">Job Seeker</a></div>
