@@ -45,11 +45,11 @@
     <div class="btn-login" *ngIf="menuType==='default'">
       <div class="log-in"><a href="/jobList">Applied Jobs</a></div>
     </div>
-    <div class="btn-login">
-      <div class="log-in"><a href="/l" *ngIf="menuType==='default'">Log In</a></div>
+    <div class="btn-login" *ngIf="!isLoggedIn">
+      <div class="log-in"><a href="/l" *ngIf="menuType==='default'" >Log In</a></div>
     </div>
-    <div class="btn-login">
-      <div class="log-in"><a href="/l" *ngIf="menuType==='default'">Log Out</a></div>
+    <div class="btn-login" *ngIf="isLoggedIn">
+      <div class="log-in"><a (click)="onLogOut()" *ngIf="menuType==='default'">Log Out</a></div>
     </div>
   </div>
 </div>

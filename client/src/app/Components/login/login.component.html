@@ -8,22 +8,22 @@
     <h3>Login Here</h3>
 
     <label for="username">Username</label>
-    <input type="text" placeholder="Email" id="username" formControlName="email"/>
+    <input type="text" placeholder="Email" id="username" [(ngModel)]="email" formControlName="email"/>
     <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
       <small class="text-danger">Enter a valid email</small>
     </div>
     
 
     <label for="password">Password</label>
-    <input type="password" placeholder="Password" id="password" formControlName="password"/>
+    <input type="password" placeholder="Password" [(ngModel)]="password" id="password" formControlName="password"/>
 
     <label for="role">Role</label>
-    <select name="role" id="role">
-      <option value="none" selected disabled hidden>Select an Option</option>
+    <select [(ngModel)]="role" formControlName="role" id="role">
+      <option value="none" [selected]="true" [disabled]="true" [hidden]="true">Select an Option</option>
       <option value="Recruiter">Recruiter</option>
       <option value="Job Seeker">Job Seeker</option>
     </select>
-      <button>Log In</button>
+      <button (click)="OnLogIn()" routerLink="/">Log In</button>
     <p>Sign Up As</p>
     <div class="social">
       <div class="go"><a href="/jsr" class="link">Job Seeker</a></div>
