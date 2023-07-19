@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  menuType: String='default';
+  menuType: String='';
   constructor(private route:Router){
 
   }
@@ -16,9 +16,19 @@ export class NavbarComponent {
     this.route.events.subscribe((val:any)=>{
   
       if(val.routerEvent.url){
-          console.warn(val.routerEvent.url);
+          // console.warn(val.routerEvent.url);
           if(val.routerEvent.url.includes('rlogin')){
-              this.menuType='recruiter'
+              this.menuType='rlogin'
+          }else if(val.routerEvent.url.includes('rProfile')){
+            this.menuType='rprofile'
+          }else if(val.routerEvent.url.includes('jobList')){
+            this.menuType='joblist'
+          }else if(val.routerEvent.url.includes('addjob')){
+            this.menuType='addjob'
+          }else if(val.routerEvent.url.includes('addjob')){
+            this.menuType='addjob'
+          }else{
+            this.menuType='home'
           }
         }
     })
