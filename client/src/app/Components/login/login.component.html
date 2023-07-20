@@ -18,7 +18,7 @@
     <input type="password" placeholder="Password" [(ngModel)]="password" id="password" formControlName="password"/>
 
     <label for="role">Role</label>
-    <select [(ngModel)]="role" formControlName="role" id="role">
+    <select [(ngModel)]="role" formControlName="role">
       <option value="none" [selected]="true" [disabled]="true" [hidden]="true">Select an Option</option>
       <option value="Recruiter">Recruiter</option>
       <option value="Job Seeker">Job Seeker</option>

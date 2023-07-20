@@ -310,3 +310,23 @@
   align-items: center;
   justify-content: flex-start;
 }
+
+
+.back,
+.back * {
+  box-sizing: border-box;
+}
+.back {
+  color: #3170ac;
+  text-align: left;
+  font: 300 15px/80.52% "Inter", sans-serif;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  left: -28%;
+  padding: 10px;
+  background-color: #e5f2ff;
+  border-radius: 5px;
+  cursor: pointer;
+}

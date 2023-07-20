@@ -14,7 +14,7 @@
 
 .description{
     overflow: hidden;
-    max-height: 1.5em;
+    max-height: 3em;
 }
 .card img{
     height: 180px;
@@ -22,14 +22,22 @@
     overflow: hidden;
 }
 .card h4{
-    font-size: 24px;
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: 200;
 }
 .card p{
     font-size: 16px;
     font-weight: 400;
 }
 .card h6{
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+button a{
+    padding: 10px 15px;
+    color: #ffffffd8;
+    background-color: #3170ac;
+    border-radius: 4px;
+    font-weight: bold;
 }

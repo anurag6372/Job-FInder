@@ -46,11 +46,11 @@
       <div class="btn-login" >
         <div class="log-in"><a routerLink="/jobList">Applied Jobs</a></div>
       </div>
-      <div class="btn-login" >
+      <div class="btn-login" *ngIf="!isLoggedIn" >
         <div class="log-in" ><a routerLink="/l" >Log In</a></div>
       </div>
-      <div class="btn-login" >
-        <div class="log-in"><a routerLink="/" >Log Out</a></div>
+      <div class="btn-login" *ngIf="isLoggedIn">
+        <div class="log-in"><a (click)="onLogOut()" >Log Out</a></div>
       </div>
     </div>
 
@@ -59,7 +59,7 @@
         <div class="log-in"><a routerLink="/rProfile" >Profile</a></div>
       </div>
       <div class="btn-login" >
-        <div class="log-in"><a routerLink="/" >Log Out</a></div>
+        <div class="log-in"><a (click)="onLogOut()" >Log Out</a></div>
       </div>
     </div>
 
@@ -75,7 +75,7 @@
         <div class="log-in"><a routerLink="/rlogin" >Home</a></div>
       </div>
       <div class="btn-login" >
-        <div class="log-in"><a routerLink="/" >Log Out</a></div>
+        <div class="log-in"><a (click)="onLogOut()" >Log Out</a></div>
       </div>
     </div>
 
@@ -84,7 +84,7 @@
         <div class="log-in"><a routerLink="/rlogin" >Home</a></div>
       </div>
       <div class="btn-login" >
-        <div class="log-in"><a routerLink="/" >Log Out</a></div>
+        <div class="log-in"><a (click)="onLogOut()" >Log Out</a></div>
       </div>
 
     </div>
@@ -94,7 +94,7 @@
         <div class="log-in"><a routerLink="/rlogin" >Home</a></div>
       </div>
       <div class="btn-login" >
-        <div class="log-in"><a routerLink="/" >Log Out</a></div>
+        <div class="log-in"><a (click)="onLogOut()" >Log Out</a></div>
       </div>
     </div>
 
