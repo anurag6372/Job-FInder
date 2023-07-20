@@ -8,7 +8,7 @@
       <h3>Create Account</h3>
   
       
-      <input type="text" placeholder="Name" id="username" />
+      <input type="text" placeholder="Name" id="username" formControlName="name" />
       <input type="text" placeholder="Email" id="username"  formControlName="email"/>
     
       <div *ngIf="myForm.get('email')?.invalid && (myForm.get('email')?.dirty || myForm.get('email')?.touched)">
@@ -22,10 +22,10 @@
       </div>
       
       <input type="password" placeholder="Conform Password" id="conformpassword" formControlName="conformpassword"/>
-      <input type="text" placeholder="Company Name" id="companyname" />
-      <input type="text" placeholder="Position" id="position" />
+      <input type="text" placeholder="Company Name" formControlName="companyName" id="companyname" />
+      <input type="text" placeholder="Position" formControlName="position" id="position" />
   
-      <button>Sign Up</button>
+      <button (click)="registerRecruiter()">Sign Up</button>
       <div class="social">
         <!-- <div class="go"><i class="fab fa-google"></i>  Google</div> -->
         <div class="fb">

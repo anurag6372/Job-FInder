@@ -20,6 +20,9 @@ export class JSRegisterComponent {
     })
   }
 
+  
+  
+
   displayVal:string[]=[];
   display:boolean=(Array.isArray(this.displayVal) && this.displayVal.length >0);
   getSkill(val:any){

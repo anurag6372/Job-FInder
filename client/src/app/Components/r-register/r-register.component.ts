@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { JobService } from 'src/app/Service/job.service';
 
 @Component({
   selector: 'app-r-register',
@@ -8,12 +10,27 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class RRegisterComponent {
   myForm!: FormGroup;
+  // companyName="";
+  // position="";
+  
+  constructor(private route:Router,private service:JobService){
 
+  }
   ngOnInit(): void {
     this.myForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')]),
-      conformpassword: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')])
+      conformpassword: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')]),
+      companyName: new FormControl('', [Validators.required]),
+      position: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required]),
     })
+  }
+  registerRecruiter() {
+    const tempRecruiter=this.myForm.value;
+    this.service.registerRecruiter(tempRecruiter).subscribe(
+      data=>console.log(data),
+      error=>console.log(error)
+    )
   }
 }
