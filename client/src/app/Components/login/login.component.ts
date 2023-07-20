@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class LoginComponent {
   email:String="";
   password:String="";
   role:any;
-  
+  constructor(private router:Router){}
   ngOnInit(): void {
     this.myForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -23,6 +24,14 @@ export class LoginComponent {
   OnLogIn() {
     localStorage.setItem("role",this.role);
   console.log(this.email,this.password,this.role);
+    if (this.role=="Recruiter" && this.email!= '' && this.password !='') {
+      this.router.navigateByUrl('/rlogin');
+      
+    } 
+    if (this.role=="Job Seeker" && this.email!= '' && this.password !=''){
+      
+      this.router.navigateByUrl('/');
+    }
   }
 
 }

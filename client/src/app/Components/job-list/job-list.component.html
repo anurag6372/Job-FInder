@@ -1,8 +1,12 @@
 <app-navbar></app-navbar>
 <div class="dashboard">
-    <div class="dashboard-head">
+    <div class="dashboard-head" *ngIf="role==='Recruiter'">
         <h1>Posted Jobs</h1>
         <a class="btn-addjob" [routerLink]="'/addjob'">+ Add Job</a>
+    </div>
+    <div class="dashboard-head" *ngIf="role==='Job Seeker'">
+        <h1>Applied Jobs</h1>
+        
     </div>
 
     <div class="jobContainer">

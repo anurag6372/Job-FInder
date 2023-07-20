@@ -11,7 +11,7 @@ export class ProfileComponent {
   menuType: String='';
   ngOnInit(): void{
       this.route.events.subscribe((val:any)=>{
-          console.warn(val.routerEvent.url);
+          // console.warn(val.routerEvent.url);
           if(val.routerEvent.url.includes('rProfile')){
             this.menuType='rProfile'
           }else{

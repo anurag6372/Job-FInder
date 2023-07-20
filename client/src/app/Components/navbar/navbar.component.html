@@ -39,11 +39,11 @@
   </div> -->
   <div [ngSwitch]="menuType">
 
-    <div class="menu" *ngSwitchCase="'home'">
-      <div class="btn-login">
+    <div class="menu" *ngSwitchCase="'home'" >
+      <div class="btn-login" *ngIf="isLoggedIn" >
         <div class="log-in"><a routerLink="/jsProfile" >Profile</a></div>
       </div>
-      <div class="btn-login" >
+      <div class="btn-login" *ngIf="isLoggedIn" >
         <div class="log-in"><a routerLink="/jobList">Applied Jobs</a></div>
       </div>
       <div class="btn-login" *ngIf="!isLoggedIn" >
@@ -80,8 +80,11 @@
     </div>
 
     <div class="menu" *ngSwitchCase="'joblist'">
-      <div class="btn-login">
+      <div class="btn-login" *ngIf="role==='Recruiter'">
         <div class="log-in"><a routerLink="/rlogin" >Home</a></div>
+      </div>
+      <div class="btn-login" *ngIf="role==='Job Seeker'">
+        <div class="log-in"><a routerLink="/" >Home</a></div>
       </div>
       <div class="btn-login" >
         <div class="log-in"><a (click)="onLogOut()" >Log Out</a></div>
@@ -97,6 +100,20 @@
         <div class="log-in"><a (click)="onLogOut()" >Log Out</a></div>
       </div>
     </div>
+    
+    
+    
+    <div class="menu" *ngSwitchCase="'jsprofile'">
+      <div class="btn-login">
+        <div class="log-in"><a routerLink="/" >Home</a></div>
+      </div>
+      <div class="btn-login" >
+        <div class="log-in"><a (click)="onLogOut()" >Log Out</a></div>
+      </div>
+    </div>
+
+
+
 
 
   </div>

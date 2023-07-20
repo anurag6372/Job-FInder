@@ -174,7 +174,7 @@ button{
 
 .jobCards{
   margin-top: 20px;
-  height: 73vh;
+  /* height: 73vh; */
   overflow-y: scroll;
 }
 
