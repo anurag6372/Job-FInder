@@ -10,7 +10,7 @@ import { Job } from '../Entity/job';
 })
 export class JobService {
   tempObj = {
-    username: "",
+    email: "",
     password: ""
   };
 
@@ -23,7 +23,7 @@ export class JobService {
   }
 
   public loginRecruiter(recruiter:Recruiter):Observable<any>{
-    this.tempObj.username=recruiter.email
+    this.tempObj.email=recruiter.email
     this.tempObj.password=recruiter.password
     return this._http.post<any>("http://localhost:8080/loginRecruiter",this.tempObj);
   }
@@ -33,7 +33,7 @@ export class JobService {
   }
 
   public loginJobSeeker(jobSeeker:JobSeeker):Observable<any>{
-    this.tempObj.username=jobSeeker.email
+    this.tempObj.email=jobSeeker.email
     this.tempObj.password=jobSeeker.password
     return this._http.post<any>("http://localhost:8080/loginJobSeeker",this.tempObj);
   }

@@ -33,6 +33,7 @@ export class LoginComponent {
     if (this.role=="Recruiter" && this.email!= '' && this.password !='') {
       this.recruiter.email=this.email;
       this.recruiter.password=this.password;
+      
       this.service.loginRecruiter(this.recruiter).subscribe(
         data=>{
           console.log(data);
@@ -48,6 +49,7 @@ export class LoginComponent {
       
       this.jobSeeker.email=this.email;
       this.jobSeeker.password=this.password;
+      console.log(this.jobSeeker)
       this.service.loginJobSeeker(this.jobSeeker).subscribe(
         data=>{
           console.log(data);
