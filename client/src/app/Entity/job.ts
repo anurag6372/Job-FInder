@@ -1,20 +1,20 @@
 import { DatePipe, DecimalPipe } from "@angular/common";
 
 export class Job {
-    id:String | undefined;
-    title:String | undefined;
-    companyName:String | undefined;
-    tags:String[] | undefined;
-    description:String | undefined;
-    location:String | undefined;
-    salary:DecimalPipe | undefined;
-    skillsRequired:String[] | undefined;
-    applyLink:String | undefined;
-    lastApplyDate:DatePipe | undefined;
-    experience:Number | undefined;
-    dateOfPosting:DatePipe | undefined;
+    id:string;
+    title:string;
+    companyName:string;
+    tags:string[];
+    description:string;
+    location:string;
+    salary:DecimalPipe;
+    skillsRequired:string[];
+    applyLink:string;
+    lastApplyDate:DatePipe;
+    experience:Number;
+    dateOfPosting:DatePipe;
 
-    constructor(id: String,title: String,companyName: String,tags: String[],description: String,location: String,salary: DecimalPipe,skillsRequired: String[],applyLink: String,lastApplyDate: DatePipe,experience: Number,dateOfPosting: DatePipe){
+    constructor(id: string,title: string,companyName: string,tags: string[],description: string,location: string,salary: DecimalPipe,skillsRequired: string[],applyLink: string,lastApplyDate: DatePipe,experience: Number,dateOfPosting: DatePipe){
         this.id=id;
         this.title=title;
         this.companyName=companyName;

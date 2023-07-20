@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { JobSeeker } from 'src/app/Entity/job-seeker';
+import { Recruiter } from 'src/app/Entity/recruiter';
+import { JobService } from 'src/app/Service/job.service';
 
 
 @Component({
@@ -10,10 +13,13 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   myForm!: FormGroup;
-  email:String="";
-  password:String="";
+  email:string="";
+  password:string="";
   role:any;
-  constructor(private router:Router){}
+  recruiter= new Recruiter();
+  jobSeeker = new JobSeeker();
+
+  constructor(private router:Router,private service:JobService){}
   ngOnInit(): void {
     this.myForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -25,12 +31,32 @@ export class LoginComponent {
     localStorage.setItem("role",this.role);
   console.log(this.email,this.password,this.role);
     if (this.role=="Recruiter" && this.email!= '' && this.password !='') {
-      this.router.navigateByUrl('/rlogin');
+      this.recruiter.email=this.email;
+      this.recruiter.password=this.password;
+      this.service.loginRecruiter(this.recruiter).subscribe(
+        data=>{
+          console.log(data);
+          this.router.navigateByUrl('/rlogin');
+        },
+        error =>{
+          console.log(error);
+        }
+      )
       
     } 
     if (this.role=="Job Seeker" && this.email!= '' && this.password !=''){
       
-      this.router.navigateByUrl('/');
+      this.jobSeeker.email=this.email;
+      this.jobSeeker.password=this.password;
+      this.service.loginJobSeeker(this.jobSeeker).subscribe(
+        data=>{
+          console.log(data);
+          this.router.navigateByUrl('/');
+        },
+        error =>{
+          console.log(error);
+        }
+      )
     }
   }
 
