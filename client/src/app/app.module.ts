@@ -22,6 +22,7 @@ import { JobListItemComponent } from './Components/job-list-item/job-list-item.c
 import { JSProfileComponent } from './Components/jsprofile/jsprofile.component';
 import { RProfileComponent } from './Components/rprofile/rprofile.component';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -52,7 +53,7 @@ import { ProfileComponent } from './Components/profile/profile.component';
     FormsModule,
 
     BrowserAnimationsModule,
-
+    HttpClientModule,
     ReactiveFormsModule
 
   ],
