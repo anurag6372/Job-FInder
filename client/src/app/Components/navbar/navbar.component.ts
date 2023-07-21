@@ -1,9 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { JobSeeker } from 'src/app/Entity/job-seeker';
+import { Recruiter } from 'src/app/Entity/recruiter';
 import { JobService } from 'src/app/Service/job.service';
 
 
-@Component({
+@Component({ 
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
@@ -13,6 +15,8 @@ export class NavbarComponent {
   // @Input() isLoggedIn: any;
   menuType: String = 'default';
   isLoggedIn: boolean = false;
+  recruiter!: Recruiter;
+  jobseeker!: JobSeeker;
   constructor(private route: Router, private _jobService: JobService) {
     this.isLoggedIn = _jobService.isLoggedIn();
     // console.log("from navbar", this.isLoggedIn);
@@ -56,6 +60,30 @@ export class NavbarComponent {
       localStorage.clear();
       this.route.navigate(['/']);
     }
+
+    rProfile(){
+      const tempRecruiterId = localStorage.getItem("recruiterId");
+      this._jobService.fetchRecruiter(tempRecruiterId).subscribe(
+        data=> {
+          this.recruiter =data;
+          console.log('navbar recruiter',this.recruiter);
+          this._jobService.setRecruiterData(this.recruiter);
+        },
+          error=> console.log(error)
+      )
+    }
+    jProfile(){
+      const tempJobSeekerId = localStorage.getItem("jobseekerId");
+      this._jobService.fetchJobSeeker(tempJobSeekerId).subscribe(
+        data=> {
+          this.jobseeker =data;
+          console.log('navbar jobseeker',this.jobseeker);
+          this._jobService.setJobSeekerData(this.jobseeker);
+        },
+          error=> console.log(error)
+      )
+    }
+
   }
 
 

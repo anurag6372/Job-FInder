@@ -36,7 +36,7 @@ export class LoginComponent {
       
       this.service.loginRecruiter(this.recruiter).subscribe(
         data=>{
-          console.log(data);
+          // console.log(data);
           localStorage.setItem("recruiterId",data.id);
           this.router.navigateByUrl('/rlogin');
         },

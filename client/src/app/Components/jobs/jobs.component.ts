@@ -22,7 +22,7 @@ onApplyNow() {
     this._route.navigate(['/jobDetail',this.job.id])
   }else{
     this._route.navigate(['/l'])
-  }
+  } 
 }
 
 }

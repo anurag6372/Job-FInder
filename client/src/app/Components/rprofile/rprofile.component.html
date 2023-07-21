@@ -2,32 +2,31 @@
     <div class="leftdiv">
       <div class="greeting">
         <h3>Welcome,</h3>
-        <h1>FirstName</h1>
-        <h1> LastName</h1>
+        <h1 *ngFor="let name of recruiter.name.split(' ')">{{name}}</h1>
       </div>
-    </div>
+    </div> 
     <div class="rightdiv">
       <div class="detailsList">
-          <h5>unique id: adseijodf225298vdfi435</h5>
+          <h5>unique id: {{recruiter.id}}</h5>
           <span class="listItem">
               <h3>Email:</h3>
-              <h4 class="itemValue">abc@argusoft.com</h4>
+              <h4 class="itemValue">{{recruiter.email}}</h4>
           </span>
           <span class="listItem">
               <h3>Password:</h3>
-              <h4 class="itemValue">********</h4>
+              <h4 class="itemValue">{{recruiter.password}}</h4>
           </span>
           <span class="listItem">
               <h3>Company:</h3>
-              <h4 class="itemValue">Argusoft Pvt Ltd</h4>
+              <h4 class="itemValue">{{recruiter.companyName}}</h4>
           </span>
           <span class="listItem">
               <h3>Position:</h3>
-              <h4 class="itemValue">Human Resource Manager</h4>
+              <h4 class="itemValue">{{recruiter.position}}</h4>
           </span>
           <span class="listItem">
               <h3>Jobs Posted:</h3>
-              <h4 class="itemValue">4</h4>
+              <h4 class="itemValue">{{recruiter.jobList.length}}</h4>
           </span>
       </div>
     </div>

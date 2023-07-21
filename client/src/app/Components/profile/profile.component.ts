@@ -14,6 +14,7 @@ export class ProfileComponent {
           // console.warn(val.routerEvent.url);
           if(val.routerEvent.url.includes('rProfile')){
             this.menuType='rProfile'
+            
           }else{
             this.menuType='jsProfile'
           }
