@@ -12,7 +12,7 @@ export class RRegisterComponent {
   myForm!: FormGroup;
   // companyName="";
   // position="";
-  
+   
   constructor(private route:Router,private service:JobService){
 
   }

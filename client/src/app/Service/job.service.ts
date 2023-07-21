@@ -66,7 +66,7 @@ export class JobService {
     return this._http.get<any>(`http://localhost:8080/fetchRecruiter/${recruiterId}`);
   }
 
-  public addJob(recruiterId:string,job:Job):Observable<any>{
+  public addJob(recruiterId:string|null,job:Job):Observable<any>{
     return this._http.post<any>(`http://localhost:8080/addJob/${recruiterId}`,job);
   }
 
