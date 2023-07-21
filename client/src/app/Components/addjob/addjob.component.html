@@ -4,19 +4,19 @@
       <!-- <div class="shape"></div>
       <div class="shape"></div> -->
     </div>
-    <form class="heightfixer">
+    <form class="heightfixer" [formGroup]="myForm!">
       <!-- <a [href]="''"><img src="../../../assets/job-hunter-low-resolution-logo-color-on-transparent-background.png" width="100"/></a> -->
       <h3>Add Job</h3>
       
-      <input type="text" placeholder="Job Title" id="name" />
+      <input type="text" placeholder="Job Title" id="name" formControlName="title"/>
       
       <!-- <input type="textarea" placeholder="Description" id="name" /> -->
-      <textarea placeholder="Description" id="description" cols="30" rows="10"></textarea>
+      <textarea placeholder="Description" id="description" cols="30" rows="10" formControlName="description"></textarea>
       
-      <input type="text" placeholder="Company Name" id="name" />
+      <input type="text" placeholder="Company Name" id="name" formControlName="companyName"/>
 
       <div class="skill">
-        <input type="text" #tag placeholder="Enter Tags" id="tags" />
+        <input type="text" #tag placeholder="Enter Tags" id="tags" formControlName="tags"/>
         <button class="button add-tag" (click)="getTag(tag.value)"(click)="tag.value=''" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,12 +56,12 @@
         </div>
       </div>  
 
-      <input type="text" placeholder="Location" id="location" />
+      <input type="text" placeholder="Location" id="location" formControlName="location"/>
       
-      <input type="number" placeholder="Salary" id="salary" />
+      <input type="number" placeholder="Salary" id="salary" formControlName="salary"/>
       
       <div class="skill">
-        <input type="text" #skill placeholder="Skills Required" id="skills" />
+        <input type="text" #skill placeholder="Skills Required" id="skills" formControlName="skillsRequired"/>
         <button class="button add-skill" (click)="getSkill(skill.value)"(click)="skill.value=''" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -101,17 +101,17 @@
         </div>
       </div>
 
-      <input type="number" placeholder="Experience" id="salary" />
+      <input type="number" placeholder="Experience" id="experience" formControlName="experience"/>
       
-      <input type="text" placeholder="Apply Link" id="applylink" />
+      <input type="text" placeholder="Apply Link" id="applylink" formControlName="applyLink"/>
       <div class="date">
         <label for="lastapplydate">Last Apply Date: </label>
-        <input type="date" placeholder="Last Apply Date" id="lastapplydate" />
+        <input type="date" placeholder="Last Apply Date" id="lastapplydate" formControlName="lastApplyDate"/>
       </div>
       
       
   
-      <button class="button">Add Job</button>
+      <button class="button" (click)="addJob()">Add Job</button>
     </form>
   
   </div>

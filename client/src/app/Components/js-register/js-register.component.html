@@ -2,11 +2,11 @@
   <div class="background">
     <div class="shape"></div>
     <div class="shape"></div>
-  </div>
+  </div> 
   <form [formGroup]="myForm!">
     <a [routerLink]="''"><img src="../../../assets/job-hunter-low-resolution-logo-color-on-transparent-background.png" width="100"/></a>
     <h3>Create Account</h3>
-    <input type="text" placeholder="Name" id="name" />
+    <input type="text" placeholder="Name" id="name" formControlName="name"/>
 
     
     <input type="text" placeholder="Email" id="username"  formControlName="email"/>
@@ -24,11 +24,11 @@
     <input type="password" placeholder="Conform Password" id="conformpassword" formControlName="conformpassword"/>
     
 
-    <input type="text" placeholder="Portfolio Link" id="portfolioLink" />
+    <input type="text" placeholder="Portfolio Link" id="portfolioink" formControlName="portfolioLink"/>
     
     <div class="skill">
-      <input type="text" #skill placeholder="Enter a skill" id="skills" />
-      <button class="button add-skill" (click)="getSkill(skill.value)"(click)="skill.value=''" >
+      <input type="text" #skill placeholder="Enter a skill" id="skills" formControlName="skills"/>
+      <button class="button add-skill"  (click)="getSkill(skill.value)"(click)="skill.value=''" >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <button class="button">Sign Up</button>
+    <button class="button"(click)="registerJobSeeker()">Sign Up</button>
     <div class="social">
       <!-- <div class="go"><i class="fab fa-google"></i>  Google</div> -->
       <div class="fb">Already have an Account. <a routerLink="/l">Sign In</a></div>
