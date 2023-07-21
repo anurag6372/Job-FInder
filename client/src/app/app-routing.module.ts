@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: "l", component: LoginComponent },
   { path: "rr", component: RRegisterComponent },
   { path: "jsr", component: JSRegisterComponent },
-  { path: "jobDetail", component: JobDetailComponent},
+  { path: "jobDetail/:id", component: JobDetailComponent},
   { path: "rlogin", component: RloginComponent},
   { path: "addjob", component: AddjobComponent},
   { path: "jobList", component: JobListComponent},

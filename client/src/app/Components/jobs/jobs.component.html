@@ -15,12 +15,12 @@
 <div class="card">
     
     <div>
-        <h4><em>Job Title</em> <small> in </small>Company</h4>
-        <h5>in Location</h5>
-        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur impedit qui in quis laboriosam dignissimos ratione suscipit maxime accusamus? Maxime, saepe excepturi totam veniam neque voluptatem beatae! Nobis, laborum saepe?</p>    
+        <h4><em>{{job.title}}</em> <small> in </small>{{job.companyName}}</h4>
+        <h5>in {{job.location}}</h5>
+        <p class="description">{{job.description}}</p>    
     </div>
     <span>
-        <h6>Package: 7.12 LPA</h6>
+        <h6>Package: {{job.salary}} LPA</h6>
         <button (click)="onApplyNow()"><a>Apply Now</a></button>
     </span>
 

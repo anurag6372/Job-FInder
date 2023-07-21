@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { state } from '@angular/animations';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Job } from 'src/app/Entity/job';
 import { JobService } from 'src/app/Service/job.service';
 
 @Component({
@@ -9,12 +11,15 @@ import { JobService } from 'src/app/Service/job.service';
 })
 export class JobsComponent {
 
+  @Input() job!: Job;
+  
+
   constructor(private _route:Router,private _service:JobService){
 
   }
 onApplyNow() {
   if(this._service.isLoggedIn()){
-    this._route.navigate(['/jobDetail'])
+    this._route.navigate(['/jobDetail',this.job.id])
   }else{
     this._route.navigate(['/l'])
   }

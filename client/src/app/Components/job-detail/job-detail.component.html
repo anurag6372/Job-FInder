@@ -11,20 +11,21 @@
             <div class="frame-7">
                 <div class="frame-6">
                     <div class="frame-5">
-                        <div class="job-title">Software Developer Job</div>
-                        <span>in</span><span><b>Argusoft Pvt Ltd</b></span>
+                        <div class="job-title">{{job.title}} Job</div>
+                        <span>in</span><span><b>{{job.companyName}}</b></span>
                     </div>
-                    <div class="lastDate">Last Apply :<b> 23 July 2023</b></div>
+                    <div class="lastDate">Last Apply :<b> {{job.lastApplyDate}}</b></div>
                 </div>
 
-                <div class="location"><pre>in </pre><b>Pune, Mumbai</b></div>
+                <div class="location"><pre>in </pre><b>{{job.location}}</b></div>
             </div>
 
             <div class="frame-8">
                 <div class="job-description2">Job Description :-</div>
 
                 <div class="description">
-                    Contrary to popular belief, Lorem Ipsum is not simply random text. It
+                    {{job.description}}
+                    <!-- Contrary to popular belief, Lorem Ipsum is not simply random text. It
                     has roots in a piece of classical Latin literature from 45 BC, making
                     it over 2000 years old. Richard McClintock, a Latin professor at
                     Hampden-Sydney College in Virginia, looked up one of the more obscure
@@ -35,7 +36,7 @@
                     Good and Evil) by Cicero, written in 45 BC. This book is a treatise on
                     the theory of ethics, very popular during the Renaissance. The first
                     line of Lorem Ipsum, Lorem ipsum dolor sit amet.., comes
-                    from a line in section 1.10.32.
+                    from a line in section 1.10.32. -->
                 </div>
             </div>
 
@@ -45,27 +46,27 @@
                         <div class="skills-required">Skills Required :</div>
 
                         <div class="skills">
-                            &nbsp;&nbsp;Java, Python, Spring, PostgreSQL, MySQL, Angular
+                            &nbsp;&nbsp;<span class="tagsButton" *ngFor="let i of job.skillsRequired">{{i}}</span>
                         </div>
                     </div>
 
                     <div class="frame-10">
                         <div class="experience-needed">Experience Needed :</div>
 
-                        <div class="exp">&nbsp;&nbsp;0 years</div>
+                        <div class="exp">&nbsp;&nbsp;{{job.experience}} years</div>
                     </div>
 
                     <div class="frame-11">
                         <div class="salary-offered">Salary offered :</div>
 
-                        <div class="package">&nbsp;&nbsp;INR 7,12,000</div>
+                        <div class="package">&nbsp;&nbsp;INR {{job.salary}}</div>
                     </div>
 
                     <div class="frame-12">
                         <div class="apply-link">Apply Link :</div>
 
                         <div class="applink">
-                            &nbsp;&nbsp;https://www.careers@argusoft.com/
+                            &nbsp;&nbsp;{{job.applyLink}}
                         </div>
                     </div>
 
@@ -73,12 +74,13 @@
                         <div class="tags">Tags :</div>
 
                         <div class="skills">
-                            &nbsp;&nbsp;Java, Python, Spring, PostgreSQL, MySQL, Angular
+                            &nbsp;&nbsp;<span class="tagsButton" *ngFor="let i of job.tags">{{i}}</span>
+                            <!-- Java, Python, Spring, PostgreSQL, MySQL, Angular -->
                         </div>
                     </div>
                 </div>
 
-                <div class="posted">Posted : 12 hours ago</div>
+                <div class="posted">Posted : {{job.dateOfPosting}}</div>
             </div>
         </div>
     </div>

@@ -46,7 +46,9 @@
 
   <app-navbar></app-navbar>
 
-  <div class="jobCards">
+  <div class="jobCards" *ngFor="let i of jobList">
+    <app-jobs [job]="i"></app-jobs>
+    <!-- <app-jobs></app-jobs>
     <app-jobs></app-jobs>
     <app-jobs></app-jobs>
     <app-jobs></app-jobs>
@@ -56,9 +58,7 @@
     <app-jobs></app-jobs>
     <app-jobs></app-jobs>
     <app-jobs></app-jobs>
-    <app-jobs></app-jobs>
-    <app-jobs></app-jobs>
-    <app-jobs></app-jobs>
+    <app-jobs></app-jobs> -->
   </div>
   <footer class="footerClass">
     <span>

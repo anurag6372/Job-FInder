@@ -110,14 +110,14 @@
 }
 .location {
   color: #000000;
-  text-align: center;
+  /* text-align: center; */
   font: 700 15px/114.52% "Lexend Deca", sans-serif;
   position: relative;
   width: 131px;
   height: 33px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   font-family: 'Lexend Deca', sans-serif;
 }
 
@@ -329,4 +329,10 @@
   background-color: #e5f2ff;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.tagsButton{
+  padding: 0px 5px;
+  margin: 0px 5px;
+  background-color: #d6ebff;
 }
