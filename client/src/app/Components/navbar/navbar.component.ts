@@ -61,28 +61,10 @@ export class NavbarComponent {
       this.route.navigate(['/']);
     }
 
-    rProfile(){
-      const tempRecruiterId = localStorage.getItem("recruiterId");
-      this._jobService.fetchRecruiter(tempRecruiterId).subscribe(
-        data=> {
-          this.recruiter =data;
-          console.log('navbar recruiter',this.recruiter);
-          this._jobService.setRecruiterData(this.recruiter);
-        },
-          error=> console.log(error)
-      )
-    }
-    jProfile(){
-      const tempJobSeekerId = localStorage.getItem("jobseekerId");
-      this._jobService.fetchJobSeeker(tempJobSeekerId).subscribe(
-        data=> {
-          this.jobseeker =data;
-          console.log('navbar jobseeker',this.jobseeker);
-          this._jobService.setJobSeekerData(this.jobseeker);
-        },
-          error=> console.log(error)
-      )
-    }
+    
+    
+
+    
 
   }
 

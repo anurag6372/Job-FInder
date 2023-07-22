@@ -11,8 +11,15 @@ export class JSProfileComponent {
 
 jobseeker!: JobSeeker;
 constructor(private service: JobService){
-  this.jobseeker = service.getJobSeekerData();
-  console.log('jsprofile',this.jobseeker);
+  const tempJobSeekerId = localStorage.getItem("jobseekerId");
+      this.service.fetchJobSeeker(tempJobSeekerId).subscribe(
+        data=> {
+          this.jobseeker =data;
+          console.log('jsprofile jobseeker',this.jobseeker);
+          
+        },
+          error=> console.log(error)
+      )
 }
 
 }

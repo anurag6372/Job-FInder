@@ -11,8 +11,15 @@ export class RProfileComponent {
   
   recruiter!: Recruiter;
   constructor(private service : JobService){
-    this.recruiter=service.getRecruiterData();
-    console.log('rprofile',this.recruiter);
+    const tempRecruiterId = localStorage.getItem("recruiterId");
+      this.service.fetchRecruiter(tempRecruiterId).subscribe(
+        data=> {
+          this.recruiter =data;
+          console.log('rprofile recruiter',this.recruiter);
+          
+        },
+          error=> console.log(error)
+      )
     }
   
 

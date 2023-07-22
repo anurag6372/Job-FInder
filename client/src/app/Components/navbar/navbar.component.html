@@ -5,7 +5,7 @@
     <div class="job-hunter">Job Hunter</div>
   </div>
 
-  <div class="search-bar" *ngIf="menuType==='default'">
+  <div class="search-bar" *ngIf="menuType==='home'">
     <input type="text" class="search frame-1" placeholder="search jobs" />
 
     <div class="frame-2">
@@ -41,7 +41,7 @@
 
     <div class="menu" *ngSwitchCase="'home'" >
       <div class="btn-login" *ngIf="isLoggedIn" >
-        <div class="log-in"><a routerLink="/jsProfile" (click)="jProfile()">Profile</a></div>
+        <div class="log-in"><a routerLink="/jsProfile" >Profile</a></div>
       </div>
       <div class="btn-login" *ngIf="isLoggedIn" >
         <div class="log-in"><a routerLink="/jobList">Applied Jobs</a></div>
@@ -56,7 +56,7 @@
 
     <div class="menu" *ngSwitchCase="'rlogin'">
       <div class="btn-login">
-        <div class="log-in"><a routerLink="/rProfile" (click)="rProfile()" >Profile</a></div>
+        <div class="log-in"><a routerLink="/rProfile"  >Profile</a></div>
       </div>
       <div class="btn-login" >
         <div class="log-in"><a (click)="onLogOut()" >Log Out</a></div>
