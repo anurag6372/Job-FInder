@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { JobSeeker } from 'src/app/Entity/job-seeker';
+import { Recruiter } from 'src/app/Entity/recruiter';
+import { JobService } from 'src/app/Service/job.service';
 
 
 @Component({
@@ -8,9 +11,37 @@ import { Component } from '@angular/core';
 })
 export class JobListComponent {
   role:any;
-
-  constructor(){
+  jobseeker!: JobSeeker;
+  recruiter!: Recruiter;
+  constructor(private service: JobService){
     this.role=localStorage.getItem("role");
     // console.log(this.role);
+    
+    if(this.role=="Job Seeker"){
+
+      const tempJobSeekerId = localStorage.getItem("jobseekerId");
+      this.service.fetchJobSeeker(tempJobSeekerId).subscribe(
+        data=> {
+          this.jobseeker =data;
+          console.log('joblist jobseeker',this.jobseeker);
+          
+        },
+        error=> console.log(error)
+        )
+        
+      }
+    if(this.role=="Recruiter"){
+
+      const tempRecruiterId = localStorage.getItem("recruiterId");
+      this.service.fetchRecruiter(tempRecruiterId).subscribe(
+        data=> {
+          this.recruiter =data;
+          console.log('joblist recruiter',this.recruiter);
+          
+        },
+          error=> console.log(error)
+      )
+        
+      }
+    }
   }
-}

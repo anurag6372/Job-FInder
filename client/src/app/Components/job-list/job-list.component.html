@@ -10,13 +10,13 @@
     </div>
 
     <div class="jobContainer">
-        <div class="jobs">
-            <app-job-list-item></app-job-list-item>
-            <app-job-list-item></app-job-list-item>
-            <app-job-list-item></app-job-list-item>
-            <app-job-list-item></app-job-list-item>
-            <app-job-list-item></app-job-list-item>
-            <app-job-list-item></app-job-list-item>
+        <div class="jobs" *ngIf="role==='Recruiter'">
+        <app-job-list-item [jobList]="recruiter.jobList"></app-job-list-item>
+            
+        </div>
+        <div class="jobs" *ngIf="role==='Job Seeker'">
+        <app-job-list-item [jobList]="jobseeker.jobList"></app-job-list-item>
+            
         </div>
     </div>
 

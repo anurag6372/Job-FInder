@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Job } from 'src/app/Entity/job';
+import { JobSeeker } from 'src/app/Entity/job-seeker';
+import { JobService } from 'src/app/Service/job.service';
 
 @Component({
   selector: 'app-job-list-item',
@@ -6,5 +9,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./job-list-item.component.css']
 })
 export class JobListItemComponent {
-
+  @Input() jobList: Job[] = [];
+  ngOnDelete(){
+    console.log(this.jobList);
+  }
+  
 }

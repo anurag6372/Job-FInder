@@ -58,7 +58,7 @@ export class JobService {
     return this._http.get<any>(`http://localhost:8080/fetchJobSeeker/${jobSeekerId}`);
   }
 
-  public applyForJob(jobSeekerId:string,jobId:string):Observable<any>{
+  public applyForJob(jobSeekerId:string|null,jobId:string):Observable<any>{
     return this._http.get<any>(`http://localhost:8080/${jobSeekerId}/applyForJob/${jobId}`);
   }
 
@@ -72,25 +72,5 @@ export class JobService {
 
   constructor(private _http: HttpClient) { }
 
-  private recruiterData!: Recruiter;
-  private jobSeekerData!: JobSeeker;
-
-  setRecruiterData(data: Recruiter) {
-    this.recruiterData = data;
-    console.log('service recruiter',this.recruiterData);
-  }
-
-  getRecruiterData(): Recruiter {
-    return this.recruiterData;
-
-  }
-  setJobSeekerData(data: JobSeeker) {
-    this.jobSeekerData = data;
-    console.log('service jobseeker',this.jobSeekerData);
-  }
-
-  getJobSeekerData(): JobSeeker {
-    return this.jobSeekerData;
-
-  }
+  
 }

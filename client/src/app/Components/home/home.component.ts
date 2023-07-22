@@ -23,6 +23,6 @@ export class HomeComponent {
         console.log(this.jobList)
       },
       error=>console.log(error)
-    )
+    ) 
   }
 }

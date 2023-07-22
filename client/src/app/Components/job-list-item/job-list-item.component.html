@@ -1,12 +1,12 @@
-<div class="wrapper">
-    <h6 class="prodid">Job id: </h6>
+<div  class="wrapper" *ngFor="let job of jobList">
+    <h6 class="prodid">Job id: {{job.id}}</h6>
     <div class="main">
         <img src="../../../assets/welcomejob.png" width="100" class="prodimg" alt="product-image">
         <div class="details">
-            <div>
-                <h4>Job Title</h4>
-                <h6>Location</h6>
-                <h6>Description</h6>    
+            <div>        
+                <h4>Job Title : {{job.title}}</h4>
+                <h4>Location : {{job.location}}</h4>
+                <h4>Description : {{job.description}}</h4>     
             </div>
             <div class="buttons">
                 <button class="editbutton"><span class="buttontext edittext">Edit Job Details</span><img src="/assets/material-symbols_edit-square-rounded.svg" alt="edit-icon"></button>
@@ -15,3 +15,13 @@
         </div>
     </div>
 </div>
+
+
+<!-- <div>
+    <div *ngIf="jobList && jobList.length > 0">
+        <h3>Jobs Posted by {{ recruiter.name }}</h3>
+        <ul>
+          <li *ngFor="let job of jobList">{{ job.title }}</li>
+       </ul>
+      </div>    
+</div> -->
