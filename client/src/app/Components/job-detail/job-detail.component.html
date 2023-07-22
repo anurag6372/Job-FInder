@@ -66,7 +66,7 @@
                         <div class="apply-link">Apply Link :</div>
 
                         <div class="applink">
-                            &nbsp;&nbsp;{{job.applyLink}}
+                            &nbsp;&nbsp;<a href="{{job.applyLink}}">{{job.applyLink}}</a>
                         </div>
                     </div>
 
@@ -78,10 +78,16 @@
                             <!-- Java, Python, Spring, PostgreSQL, MySQL, Angular -->
                         </div>
                     </div>
+                    
                 </div>
 
                 <div class="posted">Posted : {{job.dateOfPosting}}</div>
             </div>
+        </div>
+        <div>
+            <br><br>
+            <button type="button" routerLink="/" (click)="apply()">Apply For Job</button>
+            
         </div>
     </div>
 </div>

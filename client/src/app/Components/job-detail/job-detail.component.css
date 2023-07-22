@@ -336,3 +336,13 @@
   margin: 0px 5px;
   background-color: #d6ebff;
 }
+
+button{
+  background-color: #3170ac;
+  align-content: center;
+  shape-margin: 5px;
+  padding: 16px;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+}

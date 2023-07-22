@@ -56,7 +56,7 @@ export class NavbarComponent {
 
 
     onLogOut() {
-      this.isLoggedIn = false
+      this.isLoggedIn = false;
       localStorage.clear();
       this.route.navigate(['/']);
     }
