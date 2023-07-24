@@ -25,4 +25,11 @@ export class HomeComponent {
       error=>console.log(error)
     ) 
   }
+
+  searchText: string = '';
+  onSearch(searchvalue: string) {
+    this.searchText = searchvalue;
+    // console.log('from home :',this.searchText);
+  }
+
 }

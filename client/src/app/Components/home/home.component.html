@@ -44,10 +44,10 @@
 
 <div class="desktop-1">
 
-  <app-navbar></app-navbar>
+  <app-navbar (searchEvent)="onSearch($event)"></app-navbar> 
 
   <div class="jobCards" *ngFor="let i of jobList">
-    <app-jobs [job]="i"></app-jobs>
+    <app-jobs [job]="i" [searchText]="searchText"></app-jobs>
     <!-- <app-jobs></app-jobs>
     <app-jobs></app-jobs>
     <app-jobs></app-jobs>

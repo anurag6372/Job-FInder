@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { JobSeeker } from 'src/app/Entity/job-seeker';
 import { Recruiter } from 'src/app/Entity/recruiter';
@@ -61,6 +61,12 @@ export class NavbarComponent {
       this.route.navigate(['/']);
     }
 
+    searchText:string='';
+    @Output() 
+    searchEvent = new EventEmitter<string>();
+    onsearch(){
+      this.searchEvent.emit(this.searchText);
+    }
     
     
 

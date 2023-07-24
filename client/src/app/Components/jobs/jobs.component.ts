@@ -10,12 +10,13 @@ import { JobService } from 'src/app/Service/job.service';
   styleUrls: ['./jobs.component.css']
 })
 export class JobsComponent {
-
+  
   @Input() job!: Job;
+  @Input() searchText: string = '';
   
 
   constructor(private _route:Router,private _service:JobService){
-
+      
   }
 onApplyNow() {
   if(this._service.isLoggedIn()){
@@ -24,5 +25,10 @@ onApplyNow() {
     this._route.navigate(['/l'])
   } 
 }
+ngOnChanges() {
+  console.log('Received Search Text:', this.searchText);
+  
+}
+
 
 }
