@@ -36,7 +36,8 @@ constructor(private router: Router, private service:JobService){}
       data=> console.log(data),
       error=> console.log(error)
     )
-    
+    alert('Job Added Succesfully');
+    this.myForm.reset();
   }
   
   

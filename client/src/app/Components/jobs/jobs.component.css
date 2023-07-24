@@ -3,7 +3,8 @@
     -moz-box-shadow: 8px 8px 24px -8px rgba(0,132,255,0.28);
     box-shadow: 8px 8px 24px -8px rgba(0, 0, 0, 0.089);
     padding: 20px;
-
+    min-height: auto;
+    min-width: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

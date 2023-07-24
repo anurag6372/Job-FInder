@@ -46,8 +46,8 @@
 
   <app-navbar (searchEvent)="onSearch($event)"></app-navbar> 
 
-  <div class="jobCards" *ngFor="let i of jobList">
-    <app-jobs [job]="i" [searchText]="searchText"></app-jobs>
+  <div class="jobCards">
+    <app-jobs [job]="i" [searchText]="searchText"  *ngFor="let i of jobList"></app-jobs>
     <!-- <app-jobs></app-jobs>
     <app-jobs></app-jobs>
     <app-jobs></app-jobs>
