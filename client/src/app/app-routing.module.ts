@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, mapToCanActivate } from '@angular/router';
 import { RRegisterComponent } from './Components/r-register/r-register.component';
 import { JSRegisterComponent } from './Components/js-register/js-register.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -11,18 +11,19 @@ import { JobListComponent } from './Components/job-list/job-list.component';
 import { JSProfileComponent } from './Components/jsprofile/jsprofile.component';
 import { RProfileComponent } from './Components/rprofile/rprofile.component';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { authGuard } from './Guards/auth.guard';
 
 const routes: Routes = [
   { path: "",component: HomeComponent},
   { path: "l", component: LoginComponent },
   { path: "rr", component: RRegisterComponent },
   { path: "jsr", component: JSRegisterComponent },
-  { path: "jobDetail/:id", component: JobDetailComponent},
-  { path: "rlogin", component: RloginComponent},
-  { path: "addjob", component: AddjobComponent},
-  { path: "jobList", component: JobListComponent},
-  { path: "jsProfile", component: ProfileComponent},
-  { path: "rProfile", component: ProfileComponent}
+  { path: "jobDetail/:id", component: JobDetailComponent,canActivate: [authGuard]},
+  { path: "rlogin", component: RloginComponent ,canActivate: [authGuard]},
+  { path: "addjob", component: AddjobComponent ,canActivate: [authGuard]},
+  { path: "jobList", component: JobListComponent ,canActivate: [authGuard]},
+  { path: "jsProfile", component: ProfileComponent ,canActivate: [authGuard]},
+  { path: "rProfile", component: ProfileComponent ,canActivate: [authGuard]}
 
 ];
 
