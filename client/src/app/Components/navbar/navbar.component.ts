@@ -56,9 +56,20 @@ export class NavbarComponent {
 
 
     onLogOut() {
-      this.isLoggedIn = false;
-      localStorage.clear();
-      this.route.navigate(['/']);
+      
+      const confirmation = window.confirm('Are you sure you want to log out?');
+      
+      if (confirmation) {
+        this.isLoggedIn = false;
+        localStorage.clear();
+        this.route.navigate(['/']);
+        
+        // Perform the logout logic here
+      console.log('User confirmed logout.');
+      // Your logout logic, e.g., call a logout service or clear session
+    } else {
+      console.log('User cancelled logout.');
+    }
     }
 
     searchText:string='';
