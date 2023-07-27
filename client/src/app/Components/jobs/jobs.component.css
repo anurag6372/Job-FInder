@@ -35,7 +35,18 @@
     font-weight: 400;
 }
 
-button a{
+.combinator{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+/* .logo{
+    margin-right: 5px;
+} */
+
+button{
     padding: 10px 15px;
     color: #ffffffd8;
     background-color: #3170ac;
