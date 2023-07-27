@@ -53,9 +53,7 @@ export class AddjobComponent {
       (error) => console.log(error)
     );
     alert('Job Added Succesfully');
-    this.myForm.reset();
-    this.displayVal1 = [];
-    this.displayVal2 = [];
+    this.router.navigateByUrl("rlogin");
   }
 
   displayVal1: string[] = [];

@@ -29,7 +29,8 @@ export class RRegisterComponent {
   registerRecruiter() {
     const tempRecruiter=this.myForm.value;
     this.service.registerRecruiter(tempRecruiter).subscribe(
-      data=>console.log(data),
+      data=> {console.log(data);
+        this.route.navigateByUrl("\l")},
       error=>console.log(error)
     )
   }

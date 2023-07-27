@@ -20,7 +20,7 @@ constructor(private route:Router, private service: JobService){}
       password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')]),
       conformpassword: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')]),
       name: new FormControl('', [Validators.required]),
-      portfoliolink: new FormControl('', [Validators.required]),
+      portfolioLink: new FormControl('', [Validators.required]),
       skills : new FormArray([]),
     })
   }
@@ -28,7 +28,8 @@ constructor(private route:Router, private service: JobService){}
   registerJobSeeker(){
     const tempJobSeeker = this.myForm.value;
     this.service.registerJobSeeker(tempJobSeeker).subscribe(
-      data=> console.log(data),
+      data=> {console.log(data);
+      this.route.navigateByUrl("\l")},
       error=> console.log(error)
     )
   }
