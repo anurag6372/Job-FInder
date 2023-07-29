@@ -112,6 +112,7 @@
     position: relative;
     cursor: pointer;
     margin: 10px;
+
   }
   .log-in {
     color: #0b2844;
@@ -130,4 +131,9 @@
     font-size: 18px;
     color: #ffffffd8;
     font-weight: 600;
+  }
+
+  a{
+    text-decoration: none;
+    color: #000;
   }

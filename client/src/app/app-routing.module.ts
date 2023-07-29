@@ -14,16 +14,17 @@ import { ProfileComponent } from './Components/profile/profile.component';
 import { authGuard } from './Guards/auth.guard';
 
 const routes: Routes = [
-  { path: "",component: HomeComponent},
+  { path: "", component: HomeComponent },
   { path: "l", component: LoginComponent },
   { path: "rr", component: RRegisterComponent },
   { path: "jsr", component: JSRegisterComponent },
-  { path: "jobDetail/:id", component: JobDetailComponent,canActivate: [authGuard]},
-  { path: "rlogin", component: RloginComponent ,canActivate: [authGuard]},
-  { path: "addjob", component: AddjobComponent ,canActivate: [authGuard]},
-  { path: "jobList", component: JobListComponent ,canActivate: [authGuard]},
-  { path: "jsProfile", component: ProfileComponent ,canActivate: [authGuard]},
-  { path: "rProfile", component: ProfileComponent ,canActivate: [authGuard]}
+  { path: "jobDetail/:id", component: JobDetailComponent, canActivate: [authGuard], data: { roles: ['Job Seeker', 'Recruiter'] } },
+  { path: "rlogin", component: RloginComponent, canActivate: [authGuard], data: { roles: ['Recruiter'] } },
+  { path: "addjob", component: AddjobComponent, canActivate: [authGuard], data: { roles: ['Recruiter'] } },
+  { path: "jobList", component: JobListComponent, canActivate: [authGuard], data: { roles: ['Job Seeker', 'Recruiter'] } },
+  { path: "jsProfile", component: ProfileComponent, canActivate: [authGuard], data: { roles: ['Job Seeker'] } },
+  { path: "rProfile", component: ProfileComponent, canActivate: [authGuard], data: { roles: ['Recruiter'] } }
+
 
 ];
 
