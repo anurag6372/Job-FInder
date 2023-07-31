@@ -17,10 +17,12 @@ export class NavbarComponent {
   isLoggedIn: boolean = false;
   recruiter!: Recruiter;
   jobseeker!: JobSeeker;
+  rolecheck:boolean=false;
   constructor(private route: Router, private _jobService: JobService) {
     this.isLoggedIn = _jobService.isLoggedIn();
     // console.log("from navbar", this.isLoggedIn);
     this.role=localStorage.getItem("role");
+    
   }
 
 
@@ -44,6 +46,8 @@ export class NavbarComponent {
               this.menuType = 'addjob'
             }else if (val.routerEvent.url.includes('jsProfile')) {
               this.menuType = 'jsprofile'
+            }else if (val.routerEvent.url.includes('dashboard')) {
+              this.menuType = 'dashboard'
             } else {
               this.menuType = 'home'
             }
