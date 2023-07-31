@@ -12,20 +12,29 @@ import { JSProfileComponent } from './Components/jsprofile/jsprofile.component';
 import { RProfileComponent } from './Components/rprofile/rprofile.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { authGuard } from './Guards/auth.guard';
+
 import { MainDashboardComponent } from './components/main-dashboard/main-dashboard.component';
+
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
+
 
 const routes: Routes = [
   { path: "",component: HomeComponent},
   { path: "l", component: LoginComponent },
   { path: "rr", component: RRegisterComponent },
   { path: "jsr", component: JSRegisterComponent },
-  { path: "jobDetail/:id", component: JobDetailComponent,canActivate: [authGuard]},
-  { path: "rlogin", component: RloginComponent ,canActivate: [authGuard]},
-  { path: "addjob", component: AddjobComponent ,canActivate: [authGuard]},
-  { path: "jobList", component: JobListComponent ,canActivate: [authGuard]},
-  { path: "jsProfile", component: ProfileComponent ,canActivate: [authGuard]},
-  { path: "rProfile", component: ProfileComponent ,canActivate: [authGuard]},
-  { path: "dashboard", component: MainDashboardComponent}
+
+  { path: "jobDetail/:id", component: JobDetailComponent, canActivate: [authGuard], data: { roles: ['Job Seeker', 'Recruiter'] } },
+  { path: "rlogin", component: RloginComponent, canActivate: [authGuard], data: { roles: ['Recruiter'] } },
+  { path: "addjob", component: AddjobComponent, canActivate: [authGuard], data: { roles: ['Recruiter'] } },
+  { path: "jobList", component: JobListComponent, canActivate: [authGuard], data: { roles: ['Job Seeker', 'Recruiter'] } },
+  { path: "jsProfile", component: ProfileComponent, canActivate: [authGuard], data: { roles: ['Job Seeker'] } },
+  { path: "rProfile", component: ProfileComponent, canActivate: [authGuard], data: { roles: ['Recruiter'] } },
+  { path: "dashboard", component: MainDashboardComponent},
+  
+  { path: "**", component: PageNotFoundComponent }
+
+
 
 ];
 

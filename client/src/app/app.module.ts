@@ -31,6 +31,8 @@ import { JobsByDayComponent } from './components/jobs-by-day/jobs-by-day.compone
 import { CompaniesAssociatedComponent } from './components/companies-associated/companies-associated.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChartModule } from 'angular-highcharts';
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
+
 
 
 
@@ -59,6 +61,8 @@ import { ChartModule } from 'angular-highcharts';
     MostPopularJobComponent,
     JobsByDayComponent,
     CompaniesAssociatedComponent,
+    PageNotFoundComponent,
+
     
   ],
   imports: [
