@@ -1,11 +1,8 @@
 package com.example.demo.service;
-import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
-import com.example.demo.entity.Job;
-import com.example.demo.dao.JobSeekerRepository;
 import com.example.demo.dao.RecruiterRepository;
-import com.example.demo.entity.JobSeeker;
 import com.example.demo.entity.Recruiter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,6 +42,8 @@ public class RecruiterService {
 		
 	}
 
-	
 
+    public List<Recruiter> fetchAll() {
+		return repo.findAll();
+    }
 }

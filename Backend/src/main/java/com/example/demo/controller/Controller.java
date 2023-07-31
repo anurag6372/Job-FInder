@@ -89,6 +89,19 @@ public class Controller {
 		return Jservice.addJob(id,job);
 	}
 	
+	@GetMapping("/fetchAllSeeker")
+	public List<JobSeeker> fetchAllSeeker(){
+		return JSservice.fetchAll();
+	}
 
+	@GetMapping("/fetchAllRecruiter")
+	public List<Recruiter> fetchAllRecruiter(){
+		return Rservice.fetchAll();
+	}
+
+	@GetMapping("/fetchAllLocation")
+	public List<String> fetchAllLocation(){
+		return Jservice.getAllLocation();
+	}
 	
 }

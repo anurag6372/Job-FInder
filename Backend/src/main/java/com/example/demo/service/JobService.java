@@ -54,8 +54,13 @@ public class JobService {
 		return repo.findById(id).orElse(null);
 	}
 
-	
 
-	
-
+	public List<String> getAllLocation() {
+		List<Job> tempJobList= repo.findAll();
+		List<String> tempStringList=new ArrayList<>();
+		tempJobList.forEach(i->{
+			tempStringList.add(i.getLocation());
+		});
+		return tempStringList;
+	}
 }

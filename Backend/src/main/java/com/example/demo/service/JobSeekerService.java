@@ -86,4 +86,7 @@ public class JobSeekerService {
 		return repo.findById(id).orElse(null);
 	}
 
+    public List<JobSeeker> fetchAll() {
+		return repo.findAll();
+    }
 }

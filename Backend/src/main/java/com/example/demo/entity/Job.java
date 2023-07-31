@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.Length;
 
 
 @Entity(name="Job")
@@ -27,6 +28,8 @@ public class Job {
     private String title;
     private String companyName;
     private List<String> tags;
+
+    @Column(length = Length.LOB_DEFAULT)
     private String description;
     private String location;
     private Double salary;
