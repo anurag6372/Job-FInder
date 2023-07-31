@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {
   FormGroup,
   FormControl,
@@ -15,11 +16,12 @@ import { JobService } from 'src/app/Service/job.service';
   styleUrls: ['./addjob.component.css'],
 })
 export class AddjobComponent {
-  constructor(private router: Router, private service: JobService) {}
+  constructor(private router: Router, private service: JobService, private title: Title) {}
 
   myForm!: FormGroup;
 
   ngOnInit(): void {
+    this.title.setTitle('Add Job');
     this.myForm = new FormGroup({
       title: new FormControl('', [Validators.required, Validators.email]),
       description: new FormControl('', [

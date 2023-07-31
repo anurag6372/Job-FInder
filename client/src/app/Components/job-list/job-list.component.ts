@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { JobSeeker } from 'src/app/Entity/job-seeker';
 import { Recruiter } from 'src/app/Entity/recruiter';
 import { JobService } from 'src/app/Service/job.service';
@@ -13,7 +14,7 @@ export class JobListComponent {
   role:any;
   jobseeker!: JobSeeker;
   recruiter!: Recruiter;
-  constructor(private service: JobService){
+  constructor(private service: JobService, private title: Title){
     this.role=localStorage.getItem("role");
     // console.log(this.role);
     
@@ -28,7 +29,7 @@ export class JobListComponent {
         },
         error=> console.log(error)
         )
-        
+        this.title.setTitle('Applied Jobs');
       }
     if(this.role=="Recruiter"){
 
@@ -41,7 +42,7 @@ export class JobListComponent {
         },
           error=> console.log(error)
       )
-        
+      this.title.setTitle('Posted Jobs');
       }
     }
   }

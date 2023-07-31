@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JobSeeker } from 'src/app/Entity/job-seeker';
@@ -19,8 +20,9 @@ export class LoginComponent {
   recruiter= new Recruiter();
   jobSeeker = new JobSeeker();
 
-  constructor(private router:Router,private service:JobService){}
+  constructor(private router:Router,private service:JobService, private title: Title){}
   ngOnInit(): void {
+    this.title.setTitle('Login');
     this.myForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required]),
