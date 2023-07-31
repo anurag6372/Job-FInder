@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-profile',
@@ -8,10 +7,9 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  constructor(private route: Router, private title: Title){}
+  constructor(private route: Router){}
   menuType: String='';
   ngOnInit(): void{
-    this.title.setTitle('Profile');
       this.route.events.subscribe((val:any)=>{
           // console.warn(val.routerEvent.url);
           if(val.routerEvent.url.includes('rProfile')){

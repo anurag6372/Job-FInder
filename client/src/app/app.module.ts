@@ -23,6 +23,14 @@ import { JSProfileComponent } from './Components/jsprofile/jsprofile.component';
 import { RProfileComponent } from './Components/rprofile/rprofile.component';
 import { ProfileComponent } from './Components/profile/profile.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MainDashboardComponent } from './components/main-dashboard/main-dashboard.component';
+import { TopWidgetsComponent } from './components/top-widgets/top-widgets.component';
+import { LocationCoverageComponent } from './components/location-coverage/location-coverage.component';
+import { MostPopularJobComponent } from './components/most-popular-job/most-popular-job.component';
+import { JobsByDayComponent } from './components/jobs-by-day/jobs-by-day.component';
+import { CompaniesAssociatedComponent } from './components/companies-associated/companies-associated.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ChartModule } from 'angular-highcharts';
 
 
 
@@ -45,6 +53,12 @@ import { HttpClientModule } from '@angular/common/http';
     JSProfileComponent,
     RProfileComponent,
     ProfileComponent,
+    MainDashboardComponent,
+    TopWidgetsComponent,
+    LocationCoverageComponent,
+    MostPopularJobComponent,
+    JobsByDayComponent,
+    CompaniesAssociatedComponent,
     
   ],
   imports: [
@@ -55,7 +69,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-
+    FontAwesomeModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

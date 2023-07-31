@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JobService } from 'src/app/Service/job.service';
@@ -10,13 +9,12 @@ import { JobService } from 'src/app/Service/job.service';
   styleUrls: ['./js-register.component.css']
 })
 export class JSRegisterComponent {
-constructor(private route:Router, private service: JobService, private title: Title){}
+constructor(private route:Router, private service: JobService){}
   
   myForm!: FormGroup;
 
 
   ngOnInit(): void {
-    this.title.setTitle('Register');
     this.myForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$')]),

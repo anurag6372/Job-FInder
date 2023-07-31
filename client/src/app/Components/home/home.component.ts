@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { Job } from 'src/app/Entity/job';
@@ -13,7 +12,7 @@ import { JobService } from 'src/app/Service/job.service';
 export class HomeComponent {
   isLoggedIn:any;
   jobList: Job[] = [];
-  constructor(private _router:Router,private _jobService:JobService ,private title: Title){
+  constructor(private _router:Router,private _jobService:JobService){
     this.isLoggedIn=_jobService.isLoggedIn();
     console.log("from home",this.isLoggedIn);
     this._jobService.getAllJobs().subscribe(
@@ -25,10 +24,6 @@ export class HomeComponent {
       },
       error=>console.log(error)
     ) 
-    if(this.isLoggedIn){
-      this.title.setTitle('Home');
-
-    }
   }
 
   searchText: string = '';
@@ -36,7 +31,5 @@ export class HomeComponent {
     this.searchText = searchvalue;
     // console.log('from home :',this.searchText);
   }
-  
-  
-  
+
 }

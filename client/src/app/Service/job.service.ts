@@ -70,6 +70,18 @@ export class JobService {
     return this._http.post<any>(`http://localhost:8080/addJob/${recruiterId}`,job);
   }
 
+  public fetchAllSeeker():Observable<any>{
+    return this._http.get<any>("http://localhost:8080/fetchAllSeeker");
+  }
+
+  public fetchAllRecruiter():Observable<any>{
+    return this._http.get<any>("http://localhost:8080/fetchAllRecruiter");
+  }
+
+  public fetchAllLocation():Observable<any>{
+    return this._http.get<any>("http://localhost:8080/fetchAllLocation");
+  }
+
   constructor(private _http: HttpClient) { }
 
   
