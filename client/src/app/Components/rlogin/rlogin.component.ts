@@ -13,4 +13,11 @@ export class RloginComponent {
   onDashboard(){
     this.route.navigateByUrl('/dashboard');
   }
+  onAddJob(){
+    this.route.navigateByUrl('/addjob');
+  }
+  onPostedJob(){
+    this.route.navigateByUrl('/jobList');
+  }
+
 }

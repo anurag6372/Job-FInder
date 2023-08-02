@@ -1,8 +1,8 @@
 <div class="wrap">
   <app-navbar></app-navbar>
   <div class="container">
-    <button>
-      <a routerLink="/jobList" class="link">
+    <button (click)="onPostedJob()">
+      
         <div class="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -18,8 +18,7 @@
             />
           </svg>
         </div>
-        Posted Job</a
-      >
+        Posted Job
     </button>
     <button (click)="onDashboard()">
       <div class="logo">
@@ -41,8 +40,8 @@
       </div>
       Dashboard
     </button>
-    <button>
-      <a routerLink="/addjob" class="link">
+    <button (click)="onAddJob()">
+      
         <div class="logo">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +60,7 @@
           </svg>
         </div>
         Add Job
-      </a>
+     
     </button>
   </div>
 </div>
