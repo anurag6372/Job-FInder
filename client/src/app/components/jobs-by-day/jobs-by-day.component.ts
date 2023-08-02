@@ -12,7 +12,7 @@ export class JobsByDayComponent {
       height: 325
     },
     title: {
-      text: 'Month wise sales'
+      text: 'Month wise JOBS'
     },
     xAxis: {
       categories: [
@@ -32,18 +32,18 @@ export class JobsByDayComponent {
     },
     yAxis: {
       title: {
-        text: 'Revenue in $'
+        text: ''
       }
     },
     series: [
       {
-        name: "Arizona",
+        name: "Software Developer",
         type: "line",
         color: '#044342',
         data: [70, 69, 95, 145, 182, 215, 252, 265, 233, 183, 139, 196]
       },
       {
-        name: 'Connecticut',
+        name: 'Analyst',
         type: 'line',
         color: '#7e0505',
         data: [
@@ -51,7 +51,7 @@ export class JobsByDayComponent {
         ]
       },
       {
-        name: 'Ohio',
+        name: 'Digital Marketing',
         type: 'line',
         color: '#ed9e20',
         data: [
