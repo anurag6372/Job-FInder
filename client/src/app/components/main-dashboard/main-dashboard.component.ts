@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-main-dashboard',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-dashboard.component.css']
 })
 export class MainDashboardComponent {
-
+constructor( private title: Title){
+  this.title.setTitle('Dashboard');
+}
 }

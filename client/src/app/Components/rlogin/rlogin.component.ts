@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,9 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./rlogin.component.css']
 })
 export class RloginComponent {
-  constructor(private route:Router){
+  constructor(private route:Router,private title: Title){
 
+    this.title.setTitle('Home');
   }
+  
   onDashboard(){
     this.route.navigateByUrl('/dashboard');
   }
