@@ -14,7 +14,7 @@
                         <div class="job-title">{{job.title}} Job</div>
                         <span>in</span><span><b>{{job.companyName}}</b></span>
                     </div>
-                    <div class="lastDate">Last Apply :<b> {{job.lastApplyDate}}</b></div>
+                    <div class="lastDate">Last Apply :<b> {{job.lastApplyDate| date: 'mediumDate'}}</b></div>
                 </div>
 
                 <div class="location"><pre>in </pre><b>{{job.location}}</b></div>
@@ -81,7 +81,7 @@
                     
                 </div>
 
-                <div class="posted">Posted : {{job.dateOfPosting}}</div>
+                <div class="posted">Posted : {{job.dateOfPosting| date: 'mediumDate'}}</div>
             </div>
         </div>
         <div>

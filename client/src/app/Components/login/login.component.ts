@@ -44,6 +44,7 @@ export class LoginComponent {
         },
         error =>{
           console.log(error);
+          alert('Wrong Password');
         }
       )
       
@@ -61,6 +62,7 @@ export class LoginComponent {
         },
         error =>{
           console.log(error);
+          alert('Wrong Password');
         }
       )
     }

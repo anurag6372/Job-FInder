@@ -22,5 +22,9 @@ export class RProfileComponent {
       )
     }
   
+    passwordVisible: boolean = false;
 
+    togglePasswordVisibility() {
+      this.passwordVisible = !this.passwordVisible;
+    }
 } 

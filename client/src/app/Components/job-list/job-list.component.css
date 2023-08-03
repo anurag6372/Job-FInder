@@ -26,15 +26,15 @@
     overflow-y: scroll;
 }
 
-.jobContainer::-webkit-scrollbar {
+/* .jobContainer::-webkit-scrollbar {
     display: none;
   }
   
-  /* Hide scrollbar for IE, Edge add Firefox */
+  Hide scrollbar for IE, Edge add Firefox
   .jobContainer {
     -ms-overflow-style: none;
-    scrollbar-width: none; /* Firefox */
-  }
+    scrollbar-width: none; 
+  } */
 
   .jobs{
     width: 100%;

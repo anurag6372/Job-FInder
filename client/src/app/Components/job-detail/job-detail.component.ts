@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
@@ -12,7 +13,7 @@ import { JobService } from 'src/app/Service/job.service';
 export class JobDetailComponent {
   job!: Job;
   tempId:string="";
-  constructor(private _route:Router,private service:JobService, private title: Title){
+  constructor(private _route:Router,private service:JobService, private title: Title, ){
     this.title.setTitle('Job');
     this.tempId=this._route.routerState.snapshot.url.slice(11);
     this.service.fetchJob(this.tempId).subscribe(
@@ -34,5 +35,7 @@ apply(){
   )
   alert('Succesfully Applied');
 }
+
+
 
 }

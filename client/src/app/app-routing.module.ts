@@ -21,7 +21,7 @@ import { PageNotFoundComponent } from './Components/page-not-found/page-not-foun
 const routes: Routes = [
   { path: "",component: HomeComponent},
   { path: "l", component: LoginComponent },
-  { path: "rr", component: RRegisterComponent },
+  { path: "rr", component: RRegisterComponent }, 
   { path: "jsr", component: JSRegisterComponent },
 
   { path: "jobDetail/:id", component: JobDetailComponent, canActivate: [authGuard], data: { roles: ['Job Seeker', 'Recruiter'] } },

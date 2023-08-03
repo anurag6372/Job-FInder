@@ -21,5 +21,10 @@ constructor(private service: JobService){
           error=> console.log(error)
       )
 }
+passwordVisible: boolean = false;
+
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 
 }

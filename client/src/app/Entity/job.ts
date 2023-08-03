@@ -10,11 +10,11 @@ export class Job {
     salary:DecimalPipe;
     skillsRequired:string[];
     applyLink:string;
-    lastApplyDate:DatePipe;
+    lastApplyDate:any;
     experience:Number;
-    dateOfPosting:DatePipe;
+    dateOfPosting:any;
 
-    constructor(id: string,title: string,companyName: string,tags: string[],description: string,location: string,salary: DecimalPipe,skillsRequired: string[],applyLink: string,lastApplyDate: DatePipe,experience: Number,dateOfPosting: DatePipe){
+    constructor(id: string,title: string,companyName: string,tags: string[],description: string,location: string,salary: DecimalPipe,skillsRequired: string[],applyLink: string,lastApplyDate: any,experience: Number,dateOfPosting: any){
         this.id=id;
         this.title=title;
         this.companyName=companyName;

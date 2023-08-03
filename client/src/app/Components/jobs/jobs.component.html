@@ -15,7 +15,7 @@
 <div class="card" *ngIf="searchText === '' || job.title.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()) ">
 
     <div>
-        <h4><b>{{job.title}}</b> <small> in </small>{{job.companyName}}</h4>
+        <h4 class="text-wrap"><b>{{job.title}}</b> <small> in </small>{{job.companyName}}</h4>
         <h5>in {{job.location}}</h5>
         <p class="description">{{job.description}}</p>
     </div>

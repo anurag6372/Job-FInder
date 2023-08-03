@@ -8,10 +8,12 @@ import { JobService } from 'src/app/Service/job.service';
   templateUrl: './job-list-item.component.html',
   styleUrls: ['./job-list-item.component.css']
 })
+
 export class JobListItemComponent {
   @Input() jobList: Job[] = [];
-  ngOnDelete(){
-    console.log(this.jobList);
-  }
+  // ngOnDelete(){
+  //   console.log(this.jobList);
+  // }
+  role=localStorage.getItem("role");
   
 }

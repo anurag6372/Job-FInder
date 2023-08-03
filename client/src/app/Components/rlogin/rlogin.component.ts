@@ -18,7 +18,7 @@ export class RloginComponent {
   }
   onAddJob(){
     this.route.navigateByUrl('/addjob');
-  }
+  } 
   onPostedJob(){
     this.route.navigateByUrl('/jobList');
   }

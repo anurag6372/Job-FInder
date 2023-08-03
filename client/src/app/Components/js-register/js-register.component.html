@@ -22,9 +22,14 @@
     </div>
     
     <input type="password" placeholder="Conform Password" id="conformpassword" formControlName="conformpassword"/>
-    
+    <label for="role">Select A Role</label>
+    <select  [required]="true" formControlName="role">
+      <option value="none" [selected]="true" [disabled]="true" [hidden]="true">Select an Option</option>
+      <option value="Recruiter">Recruiter</option>
+      <option value="Job Seeker">Job Seeker</option>
+    </select>
 
-    <input type="text" placeholder="Portfolio Link" id="portfolioLink" formControlName="portfolioLink"/>
+    <!-- <input type="text" placeholder="Portfolio Link" id="portfolioLink" formControlName="portfolioLink"/>
     
     <div class="skill">
       <input type="text" #skill placeholder="Enter a skill" id="skills" formControlName="skills"/>
@@ -43,9 +48,9 @@
         </svg>
       </button>
     </div>
-    <div class="">
+    <div class=""> -->
       <!-- <h6>Display Skills</h6> -->
-      <div class="show-skills" *ngIf="display">
+      <!-- <div class="show-skills" *ngIf="display">
           <span  *ngFor="let skill of displayVal ; index as skillno">
             {{ skill }}
             <button class="btn-close" (click)="deleteSkill(skillno)">
@@ -61,12 +66,12 @@
                 </defs>
               </svg>
             </button>
-          </span>
+          </span> -->
         <!-- <span>C++</span>
             <span>Java Programming</span> -->
-      </div>
-    </div>
-
+      <!-- </div>
+    </div> -->
+    
     <button class="button"(click)="registerJobSeeker()">Sign Up</button>
     <div class="social">
       <!-- <div class="go"><i class="fab fa-google"></i>  Google</div> -->
